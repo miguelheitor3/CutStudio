@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B0F19">
+<title>CutStudio — High-Retention Video Editing for Creators &amp; Brands</title>
+<meta name="description" content="Done-for-you video editing for YouTubers, creators, and brands. Dedicated editor, 48-hour turnaround, unlimited revisions. Plans from $597/mo, cancel anytime.">
+<link rel="canonical" href="https://cutstudio.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CutStudio">
+<meta property="og:title" content="CutStudio — High-Retention Video Editing for Creators & Brands">
+<meta property="og:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 48-hour turnaround, plans from $597/mo.">
+<meta property="og:url" content="https://cutstudio.example/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CutStudio — High-Retention Video Editing for Creators & Brands">
+<meta name="twitter:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 48-hour turnaround, plans from $597/mo.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%F0%9F%8E%AC%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CutStudio",
+  "url": "https://cutstudio.example/",
+  "description": "Done-for-you video editing service for YouTubers, content creators, podcasters, and brands.",
+  "areaServed": "US"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Video editing subscription",
+  "provider": { "@type": "Organization", "name": "CutStudio" },
+  "areaServed": "US",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CutStudio Plans",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Starter", "price": "597.00", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Growth", "price": "1197.00", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Studio", "price": "2397.00", "priceCurrency": "USD" }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+/* =========================================================
+   TOKENS
+========================================================= */
+:root{
+  --bg: #0B0F19;
+  --bg-soft: #0D1320;
+  --card: #131B2E;
+  --card-2: #161F36;
+  --line: rgba(255,255,255,.08);
+  --line-soft: rgba(255,255,255,.05);
+  --text: #F3F4F6;
+  --muted: #9CA3AF;
+  --dim: #6B7280;
+  --purple: #8B5CF6;
+  --purple-deep: #7C3AED;
+  --cyan: #06B6D4;
+  --cyan-deep: #0891B2;
+  --amber: #FBBF24;
+  --success: #34D399;
+  --danger: #F87171;
+  --grad: linear-gradient(135deg, var(--purple), var(--cyan));
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; font-family: var(--font-display); color: var(--text); background: var(--bg);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,p{ margin:0; }
+section{ scroll-margin-top:84px; position:relative; }
+
+.wrap{ max-width:1180px; margin:0 auto; padding:0 20px; position:relative; z-index:1; }
+@media (min-width:768px){ .wrap{ padding:0 32px; } }
+
+.section{ padding:64px 0; }
+@media (min-width:768px){ .section{ padding:108px 0; } }
+.section-alt{ background: var(--bg-soft); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+.section-head{ text-align:center; max-width:640px; margin:0 auto 44px; }
+@media (min-width:768px){ .section-head{ margin-bottom:64px; } }
+
+h2{ font-weight:800; color:var(--text); letter-spacing:-.02em; }
+.h2-lg{ font-size:clamp(28px,4.2vw,46px); line-height:1.12; }
+.h2-md{ font-size:clamp(24px,3.4vw,34px); line-height:1.18; }
+.lede{ color:var(--muted); font-size:clamp(15px,1.6vw,18px); line-height:1.6; margin-top:14px; }
+
+.neon{ background: var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.cyan{ color: var(--cyan); }
+.purple{ color: var(--purple); }
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family:var(--font-mono); font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--cyan); font-size:11px;
+}
+.eyebrow .num{ color: var(--purple); font-weight:700; }
+.eyebrow .bar{ display:inline-block; width:18px; height:1px; background: var(--line); }
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  padding:16px 28px; border-radius:12px; font-weight:700; letter-spacing:-.005em;
+  font-size:15px; line-height:1; border:none; cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn-primary{ background: var(--grad); color:#fff; box-shadow: 0 10px 30px -10px rgba(139,92,246,.55); }
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 14px 36px -8px rgba(139,92,246,.7); }
+.btn-secondary{ background: rgba(255,255,255,.04); color: var(--text); border:1px solid var(--line); }
+.btn-secondary:hover{ background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); }
+.btn-lg{ padding:19px 34px; font-size:16.5px; border-radius:13px; }
+.btn-block{ width:100%; }
+.btn-arrow::after{
+  content:""; width:1.05em; height:1.05em; flex-shrink:0; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 5 7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 5 7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.badge-pill{
+  display:inline-flex; align-items:center; padding:7px 16px; border-radius:999px;
+  background: var(--grad); color:#fff; font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+}
+
+/* =========================================================
+   CARD BASE
+========================================================= */
+.card{ background: var(--card); border:1px solid var(--line-soft); border-radius:18px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.card:hover{ transform: translateY(-3px); border-color: rgba(139,92,246,.35); box-shadow: 0 16px 40px -22px rgba(139,92,246,.4); }
+.ico-tile{ width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; background: rgba(139,92,246,.14); color: var(--purple); }
+.ico-tile.cy{ background: rgba(6,182,212,.14); color: var(--cyan); }
+
+/* placeholder media */
+.ph{
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.4rem;
+  background: repeating-linear-gradient(45deg, #131B2E, #131B2E 12px, #161F36 12px, #161F36 24px);
+  color: var(--dim); font-size:11px; font-weight:600; letter-spacing:.04em; text-align:center;
+  border:1px dashed var(--line); border-radius:16px; padding:14px;
+}
+.ph::before{
+  content:""; width:26px; height:26px; opacity:.45; background: var(--purple);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8.5v7l6-3.5-6-3.5Z' fill='black' stroke='none'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8.5v7l6-3.5-6-3.5Z' fill='black' stroke='none'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+header{
+  position:sticky; top:0; z-index:50; background: rgba(11,15,25,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:15px 0; }
+.logo{ display:flex; align-items:center; gap:10px; }
+.logo-mark{
+  width:36px; height:36px; border-radius:10px; background: var(--grad); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:900; font-size:17px; flex-shrink:0;
+}
+.logo-word{ font-weight:800; font-size:17px; color: var(--text); letter-spacing:-.01em; }
+.nav-links{ display:none; align-items:center; gap:30px; font-weight:600; font-size:14px; color: var(--muted); }
+.nav-links a:hover{ color: var(--text); }
+@media (min-width:900px){ .nav-links{ display:flex; } }
+
+/* =========================================================
+   HERO
+========================================================= */
+#hero{ padding:64px 0 60px; overflow:hidden; }
+@media (min-width:768px){ #hero{ padding:96px 0 84px; } }
+.glow{ position:absolute; border-radius:50%; filter: blur(80px); pointer-events:none; z-index:0; }
+.glow-purple{ background: radial-gradient(circle, rgba(139,92,246,.38), transparent 70%); }
+.glow-cyan{ background: radial-gradient(circle, rgba(6,182,212,.32), transparent 70%); }
+#hero .glow-purple{ width:480px; height:480px; top:-180px; left:50%; transform:translateX(-65%); }
+#hero .glow-cyan{ width:420px; height:420px; top:40px; right:-140px; }
+
+.hero-inner{ max-width:780px; margin:0 auto; text-align:center; position:relative; z-index:1; }
+#hero h1{ font-weight:800; letter-spacing:-.03em; font-size:clamp(34px,6.2vw,66px); line-height:1.07; margin-top:20px; color: var(--text); }
+.hero-sub{ margin-top:18px; color: var(--muted); font-size:clamp(15px,1.8vw,19px); line-height:1.6; max-width:52ch; margin-left:auto; margin-right:auto; }
+.hero-cta{ margin-top:32px; display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
+.hero-trust{ margin-top:26px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; font-family: var(--font-mono); font-size:11.5px; color: var(--dim); }
+.hero-trust .dot{ color: var(--purple); }
+
+/* Timeline signature graphic */
+.timeline-hero{ max-width:920px; margin:56px auto 0; position:relative; z-index:1; background: var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 24px 22px; box-shadow: 0 24px 70px -30px rgba(139,92,246,.45); }
+@media (min-width:768px){ .timeline-hero{ margin-top:72px; padding:30px 32px 26px; } }
+.tl-track{ display:flex; height:46px; border-radius:10px; overflow:hidden; background: rgba(255,255,255,.04); position:relative; }
+@media (min-width:768px){ .tl-track{ height:58px; } }
+.tl-clip{
+  height:100%;
+  opacity:.95;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+}
+.tl-clip::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.18);
+}
+.tl-clip + .tl-clip{
+  border-left:2px solid var(--card);
+}
+.tl-playhead{ position:absolute; top:-9px; bottom:-9px; width:2px; background: var(--text); left:0; animation: scrub 7s linear infinite; box-shadow: 0 0 10px 1px rgba(255,255,255,.5); }
+.tl-playhead::before{ content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; border-radius:50%; background: var(--cyan); box-shadow: 0 0 16px 4px rgba(6,182,212,.85); }
+@keyframes scrub{ 0%{ left:0%; } 100%{ left:100%; } }
+@media (prefers-reduced-motion: reduce){ .tl-playhead{ animation:none; left:32%; } }
+.tl-ruler{ display:flex; justify-content:space-between; margin-top:12px; font-family: var(--font-mono); font-size:10.5px; color: var(--dim); }
+.tl-exports{ margin-top:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.tl-exports span{ font-family: var(--font-mono); font-size:11px; font-weight:600; color: var(--muted); background: rgba(255,255,255,.03); border:1px solid var(--line); border-radius:999px; padding:7px 14px; }
+.tl-exports span b{ color: var(--cyan); font-weight:700; }
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+.portfolio-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
+@media (min-width:768px){ .portfolio-grid{ grid-template-columns: repeat(4,1fr); gap:18px; } }
+.video-card{
+  aspect-ratio: 9/16; border-radius:18px; overflow:hidden; position:relative; border:1px solid var(--line-soft);
+  display:flex; flex-direction:column; justify-content:flex-end; padding:18px; background-size:cover; background-position:center;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.video-card:hover{ transform: translateY(-4px); border-color: rgba(139,92,246,.4); }
+.video-card::before{ content:""; position:absolute; inset:0; background: linear-gradient(0deg, rgba(11,15,25,.95) 0%, rgba(11,15,25,.15) 55%, rgba(11,15,25,.05) 100%); }
+.video-card .play{
+  position:absolute; top:14px; right:14px; width:30px; height:30px; border-radius:50%; z-index:2;
+  background: rgba(11,15,25,.55); backdrop-filter: blur(4px); border:1px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+.video-card-content{ position:relative; z-index:2; }
+.video-card-content h4{ font-size:13.5px; font-weight:700; line-height:1.3; margin-bottom:5px; }
+.video-card-content p{ font-size:11.5px; color: var(--cyan); font-weight:700; font-family: var(--font-mono); }
+
+/* =========================================================
+   PAIN GRID
+========================================================= */
+.pain-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:768px){ .pain-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
+.pain-card{ padding:24px; display:flex; gap:16px; }
+.pain-card h3{ font-weight:700; color: var(--text); font-size:16px; margin-bottom:6px; }
+.pain-card p{ color: var(--muted); font-size:14px; line-height:1.55; }
+
+/* =========================================================
+   PROCESS STEPS
+========================================================= */
+.steps-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:768px){ .steps-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
+@media (min-width:1000px){ .steps-grid{ grid-template-columns: repeat(4,1fr); } }
+.step-card{ padding:30px 24px; position:relative; overflow:hidden; }
+.step-num{ font-family: var(--font-mono); font-size:46px; font-weight:700; color: var(--purple); opacity:.14; position:absolute; top:14px; right:18px; line-height:1; }
+.step-card h3{ font-weight:700; font-size:17px; margin: 30px 0 8px; color: var(--text); position:relative; }
+.step-card p{ color: var(--muted); font-size:13.5px; line-height:1.6; position:relative; }
+
+/* =========================================================
+   PILLAR GRID
+========================================================= */
+.pillar-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:640px){ .pillar-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width:1000px){ .pillar-grid{ grid-template-columns: repeat(3,1fr); } }
+.pillar-card{ padding:24px; display:flex; gap:16px; align-items:flex-start; }
+.pillar-card h3{ font-weight:700; color: var(--text); font-size:15.5px; margin-bottom:6px; }
+.pillar-card p{ color: var(--muted); font-size:13.5px; line-height:1.55; }
+
+/* =========================================================
+   FORMAT CARDS
+========================================================= */
+.format-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:768px){ .format-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
+.format-card{ overflow:hidden; }
+.format-card .banner{ background: var(--grad); color:#fff; padding:16px 20px; display:flex; align-items:center; gap:14px; }
+.format-card .banner .tag{ font-family: var(--font-mono); font-size:10.5px; letter-spacing:.2em; font-weight:700; opacity:.85; }
+.format-card .banner .title{ font-weight:700; font-size:15px; flex:1; }
+.format-card .body{ padding:18px 20px 22px; }
+.format-card .body p{ color: var(--muted); font-size:14px; line-height:1.6; }
+
+/* =========================================================
+   FIT (two column)
+========================================================= */
+.fit-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:768px){ .fit-grid{ grid-template-columns: 1fr 1.06fr; gap:22px; align-items:stretch; } }
+.fit-card{ border-radius:20px; padding:28px 26px 30px; position:relative; }
+.fit-card.no{ background: var(--card); border:1px solid var(--line-soft); }
+.fit-card.yes{ position:relative; padding:2px; background: var(--grad); box-shadow: 0 20px 50px -22px rgba(139,92,246,.5); }
+.fit-card.yes .fit-inner{ background: var(--card-2); border-radius:18px; padding:28px 26px 30px; height:100%; }
+@media (min-width:768px){ .fit-card.yes{ transform: scale(1.02); } }
+.fit-card .tag{ font-family: var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color: var(--dim); margin-bottom:10px; }
+.fit-card.yes .tag{ color: var(--cyan); }
+.fit-card h3{ font-weight:700; font-size: clamp(19px,2.2vw,24px); margin-bottom:20px; color: var(--text); }
+.fit-card .badge{ position:absolute; top:-13px; left:26px; z-index:2; }
+.fit-list li{ display:flex; gap:12px; align-items:flex-start; margin-bottom:15px; font-size:14px; line-height:1.55; color: var(--muted); }
+.fit-list li:last-child{ margin-bottom:0; }
+.fit-list .ic{ flex-shrink:0; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.fit-card.no .ic{ background: rgba(255,255,255,.06); color: var(--dim); }
+.fit-card.yes .ic{ background: var(--grad); color:#fff; }
+.fit-card.yes .fit-list li{ color: rgba(243,244,246,.85); }
+
+/* =========================================================
+   COMPARISON (reuse fit-card visual language)
+========================================================= */
+.comp-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:768px){ .comp-grid{ grid-template-columns: 1fr 1fr; gap:20px; } }
+.comp-card{ border-radius:20px; padding:28px; }
+.comp-card.muted{ background: var(--card-2); border:1px solid rgba(255,255,255,.08); }
+.comp-card.glow{ padding:3px; background: linear-gradient(135deg, rgba(139,92,246,.9), rgba(6,182,212,.9)); box-shadow: 0 24px 60px -30px rgba(139,92,246,.45); }
+  /* Improve contrast and remove subtle translucency that caused a "blurred" look
+    so the "With CutStudio" advantages are clearly readable. */
+  .comp-card.glow .comp-inner{ background: var(--card); border-radius:18px; padding:32px; min-height:100%; border:1px solid rgba(255,255,255,.12); }
+.comp-title{ font-weight:700; font-size:17px; margin-bottom:18px; }
+.comp-card.muted .comp-title{ color: var(--text); }
+.comp-card.glow .comp-title{ color: #fff; }
+  /* Ensure list items in both columns are high-contrast and easy to read */
+  .comp-list li{ display:flex; gap:10px; font-size:14px; line-height:1.5; margin-bottom:14px; color: var(--text); font-weight:700; }
+.comp-list li:last-child{ margin-bottom:0; }
+.comp-card.glow .comp-list li{ color: rgba(243,244,246,.98); }
+.comp-list .x{ color: var(--danger); flex-shrink:0; font-weight:700; }
+.comp-list .ok{ color: var(--success); flex-shrink:0; font-weight:700; }
+
+/* =========================================================
+   STATS
+========================================================= */
+.stat-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:12px; }
+@media (min-width:768px){ .stat-grid{ grid-template-columns: repeat(4,1fr); gap:18px; } }
+.stat-card{ padding:24px 18px; text-align:center; }
+.stat-card .num{ font-family: var(--font-mono); font-weight:700; font-size:clamp(28px,3.6vw,38px); line-height:1; margin-bottom:10px; background: var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.stat-card .lbl{ font-weight:700; color: var(--cyan); font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; }
+.stat-card p{ color: var(--muted); font-size:13px; line-height:1.5; }
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+.testi-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:900px){ .testi-grid{ grid-template-columns: repeat(3,1fr); } }
+.testi{ padding:22px; }
+.testi .head{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.testi .avatar{ width:38px; height:38px; border-radius:50%; background: var(--grad); color:#fff; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.testi .name{ font-weight:700; color: var(--text); font-size:13.5px; }
+.testi .sub{ color: var(--dim); font-size:11.5px; }
+.testi .stars{ color: var(--amber); font-size:13px; margin-bottom:10px; letter-spacing:1px; }
+.testi p{ color: var(--muted); font-size:14px; line-height:1.6; }
+.testi-note{ text-align:center; color: var(--dim); font-size:12px; margin-top:26px; }
+
+/* =========================================================
+   OFFER
+========================================================= */
+.offer-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:640px){ .offer-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width:900px){ .offer-grid{ grid-template-columns: repeat(3,1fr); } }
+.offer-item{ padding:24px; }
+.offer-item h3{ font-weight:700; color: var(--text); font-size:15px; margin:14px 0 8px; }
+.offer-item p{ color: var(--muted); font-size:13.5px; line-height:1.55; }
+
+/* =========================================================
+   PRICING
+========================================================= */
+.plan-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
+@media (min-width:900px){ .plan-grid{ grid-template-columns: repeat(3,1fr); align-items:stretch; } }
+.plan-wrap{ border-radius:22px; }
+.plan-wrap.featured{ padding:2px; background: var(--grad); box-shadow: 0 24px 60px -22px rgba(139,92,246,.55); position:relative; }
+@media (min-width:900px){ .plan-wrap.featured{ transform: scale(1.035); } }
+.plan-card{ background: var(--card); border:1px solid var(--line-soft); border-radius:22px; padding:30px 26px; display:flex; flex-direction:column; gap:18px; height:100%; }
+.plan-wrap.featured .plan-card{ border:none; border-radius:20px; }
+.plan-badge{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); z-index:2; white-space:nowrap; }
+.plan-name{ font-family: var(--font-mono); color: var(--cyan); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+.plan-card h3{ color: var(--text); font-size:23px; font-weight:800; }
+.plan-price{ display:flex; align-items:baseline; gap:6px; margin-top:-4px; }
+.plan-price .amt{ font-size:42px; font-weight:800; color: var(--text); font-family: var(--font-mono); }
+.plan-price .per{ color: var(--dim); font-size:13px; }
+.plan-tagline{ color: var(--muted); font-size:13.5px; line-height:1.5; margin-top:-8px; }
+.plan-feats{ display:flex; flex-direction:column; gap:11px; flex:1; }
+.plan-feats li{ display:flex; gap:10px; align-items:flex-start; color: var(--muted); font-size:13.5px; line-height:1.5; }
+.plan-feats li::before{ content:"→"; color: var(--cyan); font-weight:700; flex-shrink:0; }
+.plan-feats li b{ color: var(--text); font-weight:700; }
+.plan-note{ text-align:center; color: var(--dim); font-size:13px; margin-top:38px; }
+.plan-note a{ color: var(--cyan); font-weight:700; text-decoration: underline; text-underline-offset:3px; }
+
+/* =========================================================
+   MINI GUARANTEE
+========================================================= */
+.mini-guarantee{ display:flex; align-items:center; justify-content:center; gap:16px; max-width:760px; margin:0 auto; padding:8px 12px; text-align:center; }
+.mini-guarantee .ic{ flex-shrink:0; width:46px; height:46px; border-radius:13px; background: var(--grad); color:#fff; display:flex; align-items:center; justify-content:center; }
+.mini-guarantee p{ color: var(--muted); font-size:14px; line-height:1.5; }
+.mini-guarantee strong{ color: var(--text); }
+
+/* =========================================================
+   GUARANTEE / SEAL
+========================================================= */
+.guarantee-grid{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+@media (min-width:768px){ .guarantee-grid{ grid-template-columns: 200px 1fr; gap:48px; } }
+.seal{
+  width:190px; height:190px; border-radius:999px; margin:0 auto;
+  background: radial-gradient(circle at 50% 50%, var(--bg) 0 56%, transparent 56%),
+              conic-gradient(from 0deg, var(--purple), var(--cyan), var(--purple), var(--cyan), var(--purple));
+  position:relative; box-shadow: 0 0 60px -10px rgba(139,92,246,.45);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.seal::before, .seal::after{ content:""; position:absolute; inset:13px; border-radius:999px; border:1.5px dashed rgba(255,255,255,.18); }
+.seal::after{ inset:22px; border:1.5px solid rgba(255,255,255,.28); }
+.seal-inner{ position:relative; z-index:2; }
+.seal-inner .big{ font-family: var(--font-mono); font-weight:700; font-size:36px; line-height:1; color: var(--text); }
+.seal-inner .sm{ font-weight:700; font-size:9.5px; letter-spacing:.18em; text-transform:uppercase; margin-top:6px; color: var(--muted); }
+.guarantee-points li{ display:flex; gap:12px; margin-bottom:14px; font-size:14.5px; line-height:1.55; color: var(--muted); }
+.guarantee-points .ic{ flex-shrink:0; width:24px; height:24px; border-radius:50%; background: var(--grad); color:#fff; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+
+/* =========================================================
+   TEAM
+========================================================= */
+.team-grid{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+@media (min-width:768px){ .team-grid{ grid-template-columns: 270px 1fr; gap:48px; } }
+.team-photo{ aspect-ratio:4/5; border-radius:20px; }
+.team-stats{ display:flex; gap:24px; margin-top:22px; flex-wrap:wrap; }
+.team-stats .num{ font-family: var(--font-mono); font-weight:700; color: var(--text); font-size:23px; line-height:1; }
+.team-stats .lbl{ color: var(--dim); font-size:11px; letter-spacing:.04em; margin-top:4px; }
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq-list{ max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+details.faq{ background: var(--card); border:1px solid var(--line-soft); border-radius:14px; overflow:hidden; }
+details.faq > summary{
+  list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 22px; font-weight:600; font-size:15.5px; color: var(--text);
+}
+details.faq > summary::-webkit-details-marker{ display:none; }
+details.faq .chev{
+  width:24px; height:24px; border-radius:999px; background: rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center;
+  color: var(--muted); flex-shrink:0; transition: transform .25s ease, background .2s ease, color .2s ease;
+}
+details.faq[open] .chev{ transform: rotate(45deg); background: var(--grad); color:#fff; }
+details.faq .ans{ overflow:hidden; max-height:0; transition: max-height .35s ease, padding .35s ease; color: var(--muted); font-size:14px; line-height:1.65; padding:0 22px; }
+details.faq[open] .ans{ max-height:500px; padding:0 22px 22px; }
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{ padding:76px 0 36px; text-align:center; overflow:hidden; }
+footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; margin: 16px auto 0; }
+.foot-brand{ margin-top:54px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+@media (min-width:768px){ .foot-brand{ flex-direction:row; justify-content:center; gap:12px; } }
+.foot-brand .word{ font-weight:800; color: var(--text); font-size:14px; }
+.foot-links{ margin-top:22px; color: var(--dim); font-size:11.5px; }
+.foot-links a{ text-decoration: underline; text-underline-offset:2px; }
+.foot-links a:hover{ color: var(--text); }
+
+/* =========================================================
+   STICKY MOBILE CTA
+========================================================= */
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:60; padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, rgba(11,15,25,0) 0%, rgba(11,15,25,.92) 35%, rgba(11,15,25,1) 100%);
+  backdrop-filter: blur(10px); transform: translateY(120%); transition: transform .35s ease;
+}
+.sticky-cta.show{ transform: translateY(0); }
+@media (min-width:900px){ .sticky-cta{ display:none !important; } }
+
+/* =========================================================
+   REVEAL
+========================================================= */
+.reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+.grid-2{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:768px){ .grid-2{ grid-template-columns: 1fr 1fr; gap:20px; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav-row">
+    <a href="#hero" class="logo">
+      <span class="logo-mark">C</span>
+      <span class="logo-word">Cut<span class="neon">Studio</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#portfolio">Our Work</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#pricing" class="btn btn-primary" style="padding:12px 20px; font-size:13px;">Get a Quote</a>
+  </div>
+</header>
+
+<!-- ===================== 01 HERO ===================== -->
+<section id="hero">
+  <span class="glow glow-purple"></span>
+  <span class="glow glow-cyan"></span>
+  <div class="wrap hero-inner">
+    <span class="eyebrow" style="justify-content:center;">done-for-you video editing</span>
+    <h1>Raw footage in.<br><span class="neon">Scroll-stopping videos</span> out.</h1>
+    <p class="hero-sub">CutStudio is your on-demand editing team for YouTube, social, and brand video — high-retention cuts delivered in 48 hours. No freelancer chasing. No contracts.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary btn-lg btn-arrow">See plans &amp; pricing</a>
+      <a href="#portfolio" class="btn btn-secondary btn-lg">See our work</a>
+    </div>
+    <div class="hero-trust">
+      <span>500+ videos delivered</span><span class="dot">·</span>
+      <span>48h avg. turnaround</span><span class="dot">·</span>
+      <span>4.9/5 from creators</span><span class="dot">·</span>
+      <span>cancel anytime</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="timeline-hero" aria-hidden="true">
+
+    <div class="tl-track">
+
+      <div
+        class="tl-clip"
+        style="
+          width:16%;
+          background-image:url('Timeline/1.jpg');
+        ">
+      </div>
+
+      <div
+        class="tl-clip"
+        style="
+          width:26%;
+          background-image:url('Timeline/2.jpg');
+        ">
+      </div>
+
+      <div
+        class="tl-clip"
+        style="
+          width:13%;
+          background-image:url('Timeline/3.jpg');
+        ">
+      </div>
+
+      <div
+        class="tl-clip"
+        style="
+          width:24%;
+          background-image:url('Timeline/4.jpg');
+        ">
+      </div>
+
+      <div
+        class="tl-clip"
+        style="
+          width:21%;
+          background-image:url('Timeline/5.jpg');
+        ">
+      </div>
+
+      <div class="tl-playhead"></div>
+
+    </div>
+
+    <div class="tl-ruler">
+      <span>00:00</span>
+      <span>00:08</span>
+      <span>00:16</span>
+      <span>00:24</span>
+      <span>00:32</span>
+      <span>00:40</span>
+    </div>
+
+    <div class="tl-exports">
+      <span><b>EXPORT</b> · YouTube 16:9</span>
+      <span><b>EXPORT</b> · Shorts/Reels 9:16</span>
+      <span><b>EXPORT</b> · Square 1:1</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section id="portfolio" class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">recent work</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Engineered to <span class="neon">stop the scroll.</span></h2>
+      <p class="lede">A sample of the kind of cuts your channel could be shipping every week.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="video-card reveal" style="background-image: linear-gradient(to bottom, transparent, rgba(11,15,25,.5)), url('RecentWork/1.jpg');">
+        <span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+        <div class="video-card-content"><h4>Founder Interview Breakdown</h4><p>+1.2M views</p></div>
+      </div>
+      <div class="video-card reveal" style="background-image: linear-gradient(to bottom, transparent, rgba(11,15,25,.5)), url('RecentWork/2.jpg');">
+        <span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+        <div class="video-card-content"><h4>SaaS Product Launch Hook</h4><p>+840K views</p></div>
+      </div>
+      <div class="video-card reveal" style="background-image: linear-gradient(to bottom, transparent, rgba(11,15,25,.5)), url('RecentWork/3.jpg');">
+        <span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+        <div class="video-card-content"><h4>Tech Curiosity Short</h4><p>+3.4M views</p></div>
+      </div>
+      <div class="video-card reveal" style="background-image: linear-gradient(to bottom, transparent, rgba(11,15,25,.5)), url('RecentWork/4.jpg');">
+        <span class="play"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+        <div class="video-card-content"><h4>Podcast Highlight Reel</h4><p>+610K views</p></div>
+      </div>
+    </div>
+    <p class="testi-note">Sample placements for illustration — swap in your own client work before launch.</p>
+  </div>
+</section>
+
+<!-- ===================== 02 PAINS ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">for creators stuck in the edit bay</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Editing shouldn't be the reason you stop posting.</h2>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card card reveal">
+        <span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div><h3>Hours disappear into the timeline</h3><p>Every video eats 6–10 hours you don't have — time that should go into filming and growing your channel.</p></div>
+      </div>
+      <div class="pain-card card reveal">
+        <span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 8-3 3-2-2"/></svg></span>
+        <div><h3>Freelancers ghost mid-project</h3><p>One editor disappears and your whole upload schedule stalls, with no backup plan in place.</p></div>
+      </div>
+      <div class="pain-card card reveal">
+        <span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+        <div><h3>Quality is a coin flip</h3><p>Pacing, captions, and sound design vary wildly between edits, so your channel never feels consistent.</p></div>
+      </div>
+      <div class="pain-card card reveal">
+        <span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></span>
+        <div><h3>In-house editors don't scale</h3><p>A full-time hire runs $50k+/year and sits idle on slow weeks — overkill for most posting schedules.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 HOW IT WORKS ===================== -->
+<section id="how-it-works" class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;"><span class="bar"></span> the process</span>
+      <h2 class="h2-lg" style="margin-top:18px;">From raw footage to ready-to-post, in four steps.</h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card card reveal"><span class="step-num">01</span><h3>Upload your footage</h3><p>Drop your raw clips, b-roll, and reference videos into your private workspace. Any format your camera produces.</p></div>
+      <div class="step-card card reveal"><span class="step-num">02</span><h3>We assign your editor</h3><p>A dedicated editor matched to your niche starts cutting within 24 hours — the same editor every time.</p></div>
+      <div class="step-card card reveal"><span class="step-num">03</span><h3>Review &amp; request changes</h3><p>Get your first draft, leave timestamped notes, and request revisions until it's exactly right.</p></div>
+      <div class="step-card card reveal"><span class="step-num">04</span><h3>Download &amp; publish</h3><p>Receive your final cut in every format you need — YouTube, Shorts, Reels, and ad placements.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 WHY US ===================== -->
+<section id="why-us" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">why creators switch to cutstudio</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Built for creators who post <span class="neon">consistently.</span></h2>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar-card card reveal"><span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-12h-7l1-8Z"/></svg></span><div><h3>48-hour turnaround</h3><p>Your first draft lands in two business days, on every plan, every time.</p></div></div>
+      <div class="pillar-card card reveal"><span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>One dedicated editor</h3><p>Not a rotating pool. Your editor learns your style, your pacing, your brand.</p></div></div>
+      <div class="pillar-card card reveal"><span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><rect x="9" y="3" width="13" height="9" rx="2"/></svg></span><div><h3>Every platform format</h3><p>16:9, 9:16, and 1:1 exports included, sized and captioned for where it's posted.</p></div></div>
+      <div class="pillar-card card reveal"><span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13"/><path d="M4 19h16"/><path d="M9 22v-3h6v3"/></svg></span><div><h3>Motion graphics &amp; captions</h3><p>Animated titles, lower thirds, and styled captions built into the workflow, not billed as add-ons.</p></div></div>
+      <div class="pillar-card card reveal"><span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><div><h3>Unlimited revisions</h3><p>On Growth and Studio plans, request changes until you're happy — no extra fees, no nickel-and-diming.</p></div></div>
+      <div class="pillar-card card reveal"><span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 2v4M16 2v4"/></svg></span><div><h3>Simple monthly pricing</h3><p>One flat rate per month. No contracts, no setup fees, cancel or pause whenever you need to.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 FORMATS ===================== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">who we edit for</span>
+      <h2 class="h2-lg" style="margin-top:18px;">One editing team, every format you publish.</h2>
+    </div>
+
+    <div class="format-grid">
+      <div class="format-card card reveal"><div class="banner"><span class="tag">01</span><span class="title">YouTube Creators</span></div><div class="body"><p>Long-form editing built for retention — clean pacing, pattern interrupts, B-roll layering, and mid-roll structure that keeps viewers watching.</p></div></div>
+      <div class="format-card card reveal"><div class="banner"><span class="tag">02</span><span class="title">Short-Form (TikTok / Reels / Shorts)</span></div><div class="body"><p>Fast hooks, trending pacing, and burned-in captions designed to stop the scroll in the first second.</p></div></div>
+      <div class="format-card card reveal"><div class="banner"><span class="tag">03</span><span class="title">Podcasters</span></div><div class="body"><p>Multi-cam syncing, audio cleanup, and clip extraction so every episode becomes a week of social content.</p></div></div>
+      <div class="format-card card reveal"><div class="banner"><span class="tag">04</span><span class="title">Brands &amp; Agencies</span></div><div class="body"><p>Ads, product videos, and client work delivered white-label — your name on the credits, our team behind the scenes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 FIT ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">is this for you</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Is CutStudio right for <span class="neon">you?</span></h2>
+    </div>
+
+    <div class="fit-grid">
+      <div class="fit-card no reveal">
+        <p class="tag">probably not yet, if</p>
+        <h3>You're still figuring it out</h3>
+        <ul class="fit-list">
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>You post less than once a month and aren't sure you'll keep a regular schedule.</p></li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>You genuinely enjoy editing and it's part of your creative process.</p></li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>You don't have any raw footage yet — you're still in the planning stage.</p></li>
+        </ul>
+      </div>
+
+      <div class="fit-card yes reveal">
+        <div class="fit-inner">
+          <span class="badge badge-pill">great fit</span>
+          <p class="tag">a great fit, if</p>
+          <h3>You'd rather create than edit</h3>
+          <ul class="fit-list">
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>You post weekly (or want to) and editing is the bottleneck holding you back.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>You'd rather spend your time filming, strategizing, or running your business.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>You want consistent, professional quality without managing a freelancer.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>You're scaling output and need a team that grows with you, not a single hire.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 COMPARISON ===================== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">the alternative</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Compared to hiring it out yourself.</h2>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card muted reveal">
+        <p class="comp-title">DIY or freelance marketplace</p>
+        <ul class="comp-list">
+          <li><span class="x">✕</span>Quality and turnaround change with every hire</li>
+          <li><span class="x">✕</span>You manage briefs, feedback, and deadlines yourself</li>
+          <li><span class="x">✕</span>No backup if your editor goes quiet</li>
+          <li><span class="x">✕</span>Revisions often cost extra, per round</li>
+        </ul>
+      </div>
+      <div class="comp-card glow reveal">
+        <div class="comp-inner">
+          <p class="comp-title">With CutStudio</p>
+          <ul class="comp-list">
+            <li><span class="ok">✓</span>One dedicated editor who knows your style</li>
+            <li><span class="ok">✓</span>A project board where you leave notes, we handle the rest</li>
+            <li><span class="ok">✓</span>A backup editor always has your account covered</li>
+            <li><span class="ok">✓</span>Revisions included in every plan, flat monthly rate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 08 TURNAROUND ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">turnaround promise</span>
+      <h2 class="h2-lg" style="margin-top:18px;">48 hours. Not 48 ifs and maybes.</h2>
+      <p class="lede">Here's exactly what to expect after you upload your first batch of footage.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card card reveal"><div class="num">24h</div><div class="lbl">editor assigned</div><p>You're matched with your dedicated editor within one business day.</p></div>
+      <div class="stat-card card reveal"><div class="num">48h</div><div class="lbl">first draft</div><p>Your first cut lands in your project board, ready for notes.</p></div>
+      <div class="stat-card card reveal"><div class="num">24h</div><div class="lbl">per revision</div><p>Revision rounds turn around in a day, not a week.</p></div>
+      <div class="stat-card card reveal"><div class="num">7d</div><div class="lbl">risk-free trial</div><p>Not happy with your first draft? Get a full refund, no questions asked.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 09 TESTIMONIALS ===================== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">creator feedback</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Creators who stopped editing their own videos.</h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi card reveal">
+        <div class="head"><span class="avatar">JM</span><div><p class="name">Jordan M.</p><p class="sub">Tech YouTuber, 220K subs</p></div></div>
+        <p class="stars">★★★★★</p>
+        <p>"I used to spend my whole Sunday editing. Now I film, upload the raw files, and my draft is back before Wednesday."</p>
+      </div>
+      <div class="testi card reveal">
+        <div class="head"><span class="avatar">RP</span><div><p class="name">Riley P.</p><p class="sub">Course creator &amp; coach</p></div></div>
+        <p class="stars">★★★★★</p>
+        <p>"Having the same editor every month makes a huge difference. They know my pacing without me having to explain it anymore."</p>
+      </div>
+      <div class="testi card reveal">
+        <div class="head"><span class="avatar">SK</span><div><p class="name">Sam K.</p><p class="sub">Marketing agency owner</p></div></div>
+        <p class="stars">★★★★★</p>
+        <p>"We white-label CutStudio for three client accounts. Turnaround is faster than our old in-house editor ever was."</p>
+      </div>
+    </div>
+    <p class="testi-note">Sample testimonials shown for illustration — swap in your own client quotes before launch.</p>
+  </div>
+</section>
+
+<!-- ===================== 10 WHAT'S INCLUDED ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">what's included</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Everything inside every CutStudio plan.</h2>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer-item card reveal"><span class="ico-tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><p class="eyebrow"><span class="num">01</span> core</p><h3>Dedicated video editor</h3><p>One editor assigned to your account, briefed on your style, niche, and brand guidelines.</p></div>
+      <div class="offer-item card reveal"><span class="ico-tile cy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10M7 12h6M4 4h16v12H8l-4 4Z"/></svg></span><p class="eyebrow"><span class="num">02</span> included</p><h3>Captions &amp; subtitles</h3><p>Styled, on-brand captions burned in or delivered as separate SRT files, your call.</p></div>
+      <div class="offer-item card reveal"><span class="ico-tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></span><p class="eyebrow"><span class="num">03</span> included</p><h3>Thumbnail design</h3><p>Two thumbnail options per video, designed to match your channel's click-through style.</p></div>
+      <div class="offer-item card reveal"><span class="ico-tile cy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><p class="eyebrow"><span class="num">04</span> included</p><h3>Music &amp; SFX library</h3><p>Royalty-free music and sound effects licensed for commercial use, on every plan.</p></div>
+      <div class="offer-item card reveal"><span class="ico-tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></span><p class="eyebrow"><span class="num">05</span> included</p><h3>Private project board</h3><p>Upload footage, leave timestamped notes, and track every revision in one shared space.</p></div>
+      <div class="offer-item card reveal"><span class="ico-tile cy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-7.4 8.5 8.4 8.4 0 0 1-4.3-1.2L3 20l1.3-5a8.5 8.5 0 1 1 16.7-3.5Z"/></svg></span><p class="eyebrow"><span class="num">06</span> included</p><h3>Direct editor messaging</h3><p>Skip the support queue — message your editor directly about any draft.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11 PRICING ===================== -->
+<section id="pricing" class="section section-alt">
+  <span class="glow glow-purple" style="width:420px; height:420px; top:-140px; right:-140px;"></span>
+  <span class="glow glow-cyan" style="width:380px; height:380px; bottom:-160px; left:-120px;"></span>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">simple, monthly pricing</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Plans that pay for themselves after <span class="neon">one video.</span></h2>
+      <p class="lede">No contracts. No setup fees. Pause or cancel anytime.</p>
+    </div>
+
+    <div class="plan-grid">
+
+      <div class="plan-wrap reveal">
+        <div class="plan-card">
+          <p class="plan-name">Starter</p>
+          <h3>Solo Creator</h3>
+          <div class="plan-price"><span class="amt">$597</span><span class="per">/ month</span></div>
+          <p class="plan-tagline">For creators posting consistently who need one reliable editor.</p>
+          <ul class="plan-feats">
+            <li><b>4 long-form videos</b> (≤20 min) or 8 short-form clips</li>
+            <li>1 dedicated editor</li>
+            <li>2 revision rounds per video</li>
+            <li>Captions + 1 thumbnail option</li>
+            <li>48–72h turnaround</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary btn-block">Start with Starter</a>
+        </div>
+      </div>
+
+      <div class="plan-wrap featured reveal">
+        <span class="plan-badge badge-pill">most popular</span>
+        <div class="plan-card">
+          <p class="plan-name">Growth</p>
+          <h3>Scaling Channel</h3>
+          <div class="plan-price"><span class="amt">$1,197</span><span class="per">/ month</span></div>
+          <p class="plan-tagline">For channels publishing weekly and ready to scale output.</p>
+          <ul class="plan-feats">
+            <li><b>8 long-form videos</b> or 20 short-form clips</li>
+            <li>1 dedicated editor + backup editor</li>
+            <li><b>Unlimited revisions</b></li>
+            <li>Captions + 3 thumbnail options + motion graphics</li>
+            <li>48-hour turnaround, guaranteed</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block">Start with Growth</a>
+        </div>
+      </div>
+
+      <div class="plan-wrap reveal">
+        <div class="plan-card">
+          <p class="plan-name">Studio</p>
+          <h3>Agency &amp; Brand</h3>
+          <div class="plan-price"><span class="amt">$2,397</span><span class="per">/ month</span></div>
+          <p class="plan-tagline">For agencies and multi-channel brands managing client work.</p>
+          <ul class="plan-feats">
+            <li><b>16 long-form videos</b> or 40 short-form clips</li>
+            <li>2 dedicated editors + project manager</li>
+            <li><b>Unlimited revisions</b></li>
+            <li>White-label delivery, custom branding kit</li>
+            <li>24–48h turnaround</li>
+            <li>Dedicated Slack channel</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary btn-block">Start with Studio</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="plan-note">Need a one-off edit instead of a subscription? <a href="#contact">Contact us for a custom quote</a>.</p>
+  </div>
+</section>
+
+<!-- ===================== 12 MINI GUARANTEE ===================== -->
+<section class="section" style="padding:40px 0;">
+  <div class="wrap">
+    <div class="mini-guarantee reveal">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6Z"/></svg></span>
+      <p><strong>7-day money-back guarantee.</strong> If your first draft doesn't deliver, get a full refund. No long-term contracts — pause or cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 13 GUARANTEE ===================== -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="guarantee-grid">
+      <div class="seal reveal">
+        <div class="seal-inner"><p class="big">7</p><p class="sm">day guarantee</p></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">the guarantee</span>
+        <h2 class="h2-md" style="margin-top:14px; margin-bottom:18px;">Try CutStudio risk-free.</h2>
+        <ul class="guarantee-points">
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>If your first draft misses the mark, tell us within 7 days for a full refund.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>No long-term contracts on any plan — pause or cancel from your dashboard.</li>
+          <li><span class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>You own 100% of the rights to every video we deliver.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 14 TEAM ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="team-grid">
+      <div class="team-photo reveal">
+        <img src="Team/team.jpg" alt="Team photo" style="border-radius: 18px;">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">the team behind your edits</span>
+        <h2 class="h2-md" style="margin-top:14px; margin-bottom:16px;">A team obsessed with <span class="neon">retention, pacing, and clean cuts.</span></h2>
+        <p class="lede" style="margin-top:0;">CutStudio is run by a small team of editors who've cut hundreds of hours of YouTube, branded, and social content. We pair storytelling instinct with technical polish — color, sound design, and motion graphics — so every video feels intentional, not just trimmed.</p>
+        <div class="team-stats">
+          <div class="s"><p class="num">500+</p><p class="lbl">videos delivered</p></div>
+          <div class="s"><p class="num">30+</p><p class="lbl">creators &amp; brands</p></div>
+          <div class="s"><p class="num">4.9/5</p><p class="lbl">average rating</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 15 FAQ ===================== -->
+<section id="faq" class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">faq</span>
+      <h2 class="h2-lg" style="margin-top:18px;">Questions, answered.</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq" open>
+        <summary>How fast is turnaround?<span class="chev">+</span></summary>
+        <div class="ans">Your first draft arrives within 48 hours of your editor receiving your footage. Revisions on Growth and Studio plans turn around within 24 hours.</div>
+      </details>
+      <details class="faq">
+        <summary>What footage formats do you accept?<span class="chev">+</span></summary>
+        <div class="ans">Any format your camera, phone, or screen recorder produces — MP4, MOV, ProRes, and more. We'll let you know if something needs converting before you upload.</div>
+      </details>
+      <details class="faq">
+        <summary>How many revisions do I get?<span class="chev">+</span></summary>
+        <div class="ans">Starter includes 2 revision rounds per video. Growth and Studio include unlimited revisions until you're happy with the final cut.</div>
+      </details>
+      <details class="faq">
+        <summary>Can I cancel anytime?<span class="chev">+</span></summary>
+        <div class="ans">Yes. There are no long-term contracts. Pause or cancel from your dashboard whenever you need to — your plan simply won't renew.</div>
+      </details>
+      <details class="faq">
+        <summary>Who owns the rights to the final video?<span class="chev">+</span></summary>
+        <div class="ans">You do, fully. Every video we deliver — and any music or assets we license for it — is yours to use commercially with no restrictions.</div>
+      </details>
+      <details class="faq">
+        <summary>What if I only need one video, not a subscription?<span class="chev">+</span></summary>
+        <div class="ans">Reach out and we'll put together a custom one-off quote based on length and complexity — no need to commit to a monthly plan.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="contact">
+  <span class="glow glow-purple" style="width:420px; height:280px; top:-100px; left:50%; transform:translateX(-50%);"></span>
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;">ready when you are</span>
+    <h2>Stop editing. Start <span class="neon">posting.</span></h2>
+    <p class="lede" style="text-align:center;">Get your first cut back in 48 hours — no contracts, cancel anytime.</p>
+
+    <div style="margin-top:30px;">
+      <a href="#pricing" class="btn btn-primary btn-lg btn-arrow">See plans &amp; pricing</a>
+    </div>
+
+    <div class="foot-brand">
+      <span class="logo-mark">C</span>
+      <span class="word">Cut<span class="neon">Studio</span></span>
+    </div>
+
+    <p class="foot-links">
+      © 2026 CutStudio. All rights reserved.
+      &nbsp;·&nbsp; <a href="#">Terms of Service</a>
+      &nbsp;·&nbsp; <a href="#">Privacy Policy</a>
+      &nbsp;·&nbsp; <a href="#contact">hello@cutstudio.example</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE CTA ===================== -->
+<div id="stickyCta" class="sticky-cta">
+  <a href="#pricing" class="btn btn-primary btn-block btn-arrow" style="padding:16px;">See plans &amp; pricing</a>
+</div>
+
+<script>
+  (function () {
+    var cta = document.getElementById('stickyCta');
+    var trigger = 480;
+    var shown = false;
+    function onScroll() {
+      var should = window.scrollY > trigger;
+      if (should !== shown) { cta.classList.toggle('show', should); shown = should; }
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  (function () {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

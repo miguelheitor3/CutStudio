@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -243,27 +244,95 @@ header{
 .tl-exports span b{ color: var(--cyan); font-weight:700; }
 
 /* =========================================================
-   PORTFOLIO
+   PORTFOLIO — FILTER BUTTONS
 ========================================================= */
-.portfolio-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
-@media (min-width:768px){ .portfolio-grid{ grid-template-columns: repeat(4,1fr); gap:18px; } }
+.portfolio-filters{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  margin-bottom:36px;
+}
+.filter-btn{
+  padding:9px 20px; border-radius:999px; font-size:13px; font-weight:700;
+  border:1px solid var(--line); background: rgba(255,255,255,.04);
+  color: var(--muted); cursor:pointer; transition: all .18s ease;
+  font-family: var(--font-display);
+  appearance: none; -webkit-appearance: none;
+  outline: none;
+}
+.filter-btn:hover{ background: rgba(255,255,255,.08); color: var(--text); border-color: rgba(255,255,255,.2); }
+.filter-btn.active{
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  color:#fff; border-color:transparent;
+  box-shadow: 0 6px 20px -8px rgba(139,92,246,.6);
+}
+
+/* =========================================================
+   PORTFOLIO — VIDEO CARDS
+========================================================= */
+
+/* --- Short-form grid (9:16) — 2 cols mobile, 4 cols desktop --- */
+.portfolio-short-grid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:14px;
+}
+@media (min-width:768px){
+  .portfolio-short-grid{ grid-template-columns: repeat(4,1fr); gap:18px; }
+}
+
+/* --- Long-form grid (16:9) — 1 col mobile, 2 cols desktop --- */
+.portfolio-long-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:18px;
+  margin-bottom:18px;
+}
+@media (min-width:768px){
+  .portfolio-long-grid{ grid-template-columns: repeat(2,1fr); }
+}
+
+/* Divider between long and short rows */
+.portfolio-long-grid + .portfolio-short-grid{
+  padding-top:18px;
+  border-top:1px solid var(--line-soft);
+}
+
+/* --- Card shell --- */
 .video-card{
-  border-radius:18px; overflow:hidden; position:relative; border:1px solid var(--line-soft);
+  border-radius:18px; overflow:hidden; position:relative;
+  border:1px solid var(--line-soft);
   background: var(--card);
-  transition: transform .25s ease, border-color .25s ease;
+  transition: transform .25s ease, border-color .25s ease, opacity .25s ease;
 }
 .video-card:hover{ transform: translateY(-4px); border-color: rgba(139,92,246,.4); }
+.video-card.hidden{ display:none; }
+
+/* 9:16 wrapper */
 .video-wrapper{
-  position:relative; width:100%; padding-top:177.78%; /* 9:16 */
+  position:relative; width:100%; padding-top:177.78%;
 }
-.video-wrapper iframe{
+/* 16:9 wrapper */
+.video-wrapper--wide{
+  position:relative; width:100%; padding-top:56.25%;
+}
+.video-wrapper iframe,
+.video-wrapper--wide iframe{
   position:absolute; top:0; left:0; width:100%; height:100%; border:none;
 }
-.video-card-content{
-  padding:12px 14px 14px;
-}
+
+/* Card label */
+.video-card-content{ padding:12px 14px 14px; }
 .video-card-content h4{ font-size:13px; font-weight:700; line-height:1.3; margin-bottom:4px; color: var(--text); }
 .video-card-content p{ font-size:11.5px; color: var(--cyan); font-weight:700; font-family: var(--font-mono); }
+
+/* Format badge inside card */
+.video-format-tag{
+  position:absolute; top:10px; left:10px; z-index:2;
+  font-family: var(--font-mono); font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  padding:4px 10px; border-radius:999px;
+  background: rgba(11,15,25,.75); color: var(--cyan);
+  border:1px solid rgba(6,182,212,.3);
+  backdrop-filter: blur(6px);
+}
 
 /* =========================================================
    PAIN GRID
@@ -329,50 +398,17 @@ header{
 .fit-card.yes .fit-list li{ color: rgba(243,244,246,.85); }
 
 /* =========================================================
-   PORTFOLIO FILTER BUTTONS
-========================================================= */
-.portfolio-filters{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
-  margin-bottom:32px;
-}
-.filter-btn{
-  padding:9px 20px; border-radius:999px; font-size:13px; font-weight:700;
-  border:1px solid var(--line); background: rgba(255,255,255,.04);
-  color: var(--muted); cursor:pointer; transition: all .18s ease;
-  font-family: var(--font-display);
-}
-.filter-btn:hover{ background: rgba(255,255,255,.08); color: var(--text); border-color: rgba(255,255,255,.2); }
-.filter-btn.active{ background: var(--grad); color:#fff; border-color:transparent; box-shadow: 0 6px 20px -8px rgba(139,92,246,.6); }
-.video-card{ transition: transform .25s ease, border-color .25s ease, opacity .3s ease, display .3s ease; }
-.video-card.hidden{ display:none; }
-
-/* =========================================================
-   COMPARISON (reuse fit-card visual language)
+   COMPARISON
 ========================================================= */
 .comp-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:768px){ .comp-grid{ grid-template-columns: 1fr 1fr; gap:20px; align-items:stretch; } }
 .comp-card{ border-radius:20px; padding:28px; }
-.comp-card.muted{
-  background: var(--card);
-  border:1px solid rgba(255,255,255,.14);
-}
-.comp-card.glow{
-  padding:3px;
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
-  box-shadow: 0 24px 60px -20px rgba(139,92,246,.5);
-}
-.comp-card.glow .comp-inner{
-  background: var(--card-2);
-  border-radius:18px;
-  padding:28px;
-  height:100%;
-}
+.comp-card.muted{ background: var(--card); border:1px solid rgba(255,255,255,.14); }
+.comp-card.glow{ padding:3px; background: linear-gradient(135deg, var(--purple), var(--cyan)); box-shadow: 0 24px 60px -20px rgba(139,92,246,.5); }
+.comp-card.glow .comp-inner{ background: var(--card-2); border-radius:18px; padding:28px; height:100%; }
 .comp-title{ font-weight:800; font-size:17px; margin-bottom:18px; color: var(--text); }
 .comp-card.glow .comp-title{ color: #fff; }
-.comp-list li{
-  display:flex; gap:10px; font-size:14.5px; line-height:1.55;
-  margin-bottom:14px; color: var(--text); font-weight:500;
-}
+.comp-list li{ display:flex; gap:10px; font-size:14.5px; line-height:1.55; margin-bottom:14px; color: var(--text); font-weight:500; }
 .comp-list li:last-child{ margin-bottom:0; }
 .comp-card.muted .comp-list li{ color: var(--muted); }
 .comp-card.glow .comp-list li{ color: rgba(243,244,246,.95); font-weight:600; }
@@ -568,68 +604,28 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 
   <div class="wrap">
     <div class="timeline-hero" aria-hidden="true">
-
-    <div class="tl-track">
-
-      <div
-        class="tl-clip"
-        style="
-          width:16%;
-          background-image:url('Timeline/1.jpg');
-        ">
+      <div class="tl-track">
+        <div class="tl-clip" style="width:16%; background-image:url('Timeline/1.jpg');"></div>
+        <div class="tl-clip" style="width:26%; background-image:url('Timeline/2.jpg');"></div>
+        <div class="tl-clip" style="width:13%; background-image:url('Timeline/3.jpg');"></div>
+        <div class="tl-clip" style="width:24%; background-image:url('Timeline/4.jpg');"></div>
+        <div class="tl-clip" style="width:21%; background-image:url('Timeline/5.jpg');"></div>
+        <div class="tl-playhead"></div>
       </div>
-
-      <div
-        class="tl-clip"
-        style="
-          width:26%;
-          background-image:url('Timeline/2.jpg');
-        ">
+      <div class="tl-ruler">
+        <span>00:00</span>
+        <span>00:08</span>
+        <span>00:16</span>
+        <span>00:24</span>
+        <span>00:32</span>
+        <span>00:40</span>
       </div>
-
-      <div
-        class="tl-clip"
-        style="
-          width:13%;
-          background-image:url('Timeline/3.jpg');
-        ">
+      <div class="tl-exports">
+        <span><b>EXPORT</b> · YouTube 16:9</span>
+        <span><b>EXPORT</b> · Shorts/Reels 9:16</span>
+        <span><b>EXPORT</b> · Square 1:1</span>
       </div>
-
-      <div
-        class="tl-clip"
-        style="
-          width:24%;
-          background-image:url('Timeline/4.jpg');
-        ">
-      </div>
-
-      <div
-        class="tl-clip"
-        style="
-          width:21%;
-          background-image:url('Timeline/5.jpg');
-        ">
-      </div>
-
-      <div class="tl-playhead"></div>
-
     </div>
-
-    <div class="tl-ruler">
-      <span>00:00</span>
-      <span>00:08</span>
-      <span>00:16</span>
-      <span>00:24</span>
-      <span>00:32</span>
-      <span>00:40</span>
-    </div>
-
-    <div class="tl-exports">
-      <span><b>EXPORT</b> · YouTube 16:9</span>
-      <span><b>EXPORT</b> · Shorts/Reels 9:16</span>
-      <span><b>EXPORT</b> · Square 1:1</span>
-    </div>
-
   </div>
 </section>
 
@@ -642,18 +638,59 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <p class="lede">A sample of the kind of cuts your channel could be shipping every week.</p>
     </div>
 
+    <!-- FILTER BUTTONS -->
     <div class="portfolio-filters">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="entrevista">Entrevistas</button>
-      <button class="filter-btn" data-filter="curiosidades">Curiosidades</button>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="longform">Long-form</button>
+      <button class="filter-btn" data-filter="shortform">Short-form</button>
       <button class="filter-btn" data-filter="podcast">Podcast</button>
-      <button class="filter-btn" data-filter="produto">Produto</button>
+      <button class="filter-btn" data-filter="brand">Brand</button>
     </div>
 
-    <div class="portfolio-grid">
+    <!-- LONG-FORM ROW (16:9) -->
+    <div class="portfolio-long-grid" id="longGrid">
 
-      <!-- VÍDEO 1 — troque SEU_VIDEO_ID_1 pelo ID do Short -->
-      <div class="video-card reveal" data-category="entrevista">
+      <div class="video-card reveal" data-category="longform">
+        <span class="video-format-tag">Long-form</span>
+        <div class="video-wrapper--wide">
+          <iframe
+            src="https://www.youtube.com/embed/SEU_VIDEO_ID_LONGO_1"
+            title="Documentary Deep Dive"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-card-content">
+          <h4>Documentary Deep Dive</h4>
+          <p>+2.1M views</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" data-category="longform">
+        <span class="video-format-tag">Long-form</span>
+        <div class="video-wrapper--wide">
+          <iframe
+            src="https://www.youtube.com/embed/SEU_VIDEO_ID_LONGO_2"
+            title="Brand Story — Full Cut"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-card-content">
+          <h4>Brand Story — Full Cut</h4>
+          <p>+980K views</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SHORT-FORM ROW (9:16) -->
+    <div class="portfolio-short-grid" id="shortGrid">
+
+      <div class="video-card reveal" data-category="shortform">
+        <span class="video-format-tag">Short</span>
         <div class="video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/_Hp_IUyy2rg"
@@ -666,8 +703,8 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="video-card-content"><h4>Founder Interview Breakdown</h4><p>+1.2M views</p></div>
       </div>
 
-      <!-- VÍDEO 2 — troque SEU_VIDEO_ID_2 pelo ID do Short -->
-      <div class="video-card reveal" data-category="produto">
+      <div class="video-card reveal" data-category="brand">
+        <span class="video-format-tag">Brand</span>
         <div class="video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/p-qtw5ZWgDg"
@@ -680,8 +717,8 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="video-card-content"><h4>SaaS Product Launch Hook</h4><p>+840K views</p></div>
       </div>
 
-      <!-- VÍDEO 3 — troque SEU_VIDEO_ID_3 pelo ID do Short -->
-      <div class="video-card reveal" data-category="curiosidades">
+      <div class="video-card reveal" data-category="shortform">
+        <span class="video-format-tag">Short</span>
         <div class="video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/KKi1Pnr31uI"
@@ -694,8 +731,8 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="video-card-content"><h4>Tech Curiosity Short</h4><p>+3.4M views</p></div>
       </div>
 
-      <!-- VÍDEO 4 — troque SEU_VIDEO_ID_4 pelo ID do Short -->
       <div class="video-card reveal" data-category="podcast">
+        <span class="video-format-tag">Podcast</span>
         <div class="video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/U8ws1Y08qv4"
@@ -709,6 +746,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       </div>
 
     </div>
+
     <p class="testi-note">Sample placements for illustration — swap in your own client work before launch.</p>
   </div>
 </section>
@@ -720,7 +758,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">for creators stuck in the edit bay</span>
       <h2 class="h2-lg" style="margin-top:18px;">Editing shouldn't be the reason you stop posting.</h2>
     </div>
-
     <div class="pain-grid">
       <div class="pain-card card reveal">
         <span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
@@ -749,7 +786,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;"><span class="bar"></span> the process</span>
       <h2 class="h2-lg" style="margin-top:18px;">From raw footage to ready-to-post, in four steps.</h2>
     </div>
-
     <div class="steps-grid">
       <div class="step-card card reveal"><span class="step-num">01</span><h3>Upload your footage</h3><p>Drop your raw clips, b-roll, and reference videos into your private workspace. Any format your camera produces.</p></div>
       <div class="step-card card reveal"><span class="step-num">02</span><h3>We assign your editor</h3><p>A dedicated editor matched to your niche starts cutting within 24 hours — the same editor every time.</p></div>
@@ -766,7 +802,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">why creators switch to cutstudio</span>
       <h2 class="h2-lg" style="margin-top:18px;">Built for creators who post <span class="neon">consistently.</span></h2>
     </div>
-
     <div class="pillar-grid">
       <div class="pillar-card card reveal"><span class="ico-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-12h-7l1-8Z"/></svg></span><div><h3>48-hour turnaround</h3><p>Your first draft lands in two business days, on every plan, every time.</p></div></div>
       <div class="pillar-card card reveal"><span class="ico-tile cy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>One dedicated editor</h3><p>Not a rotating pool. Your editor learns your style, your pacing, your brand.</p></div></div>
@@ -785,7 +820,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">who we edit for</span>
       <h2 class="h2-lg" style="margin-top:18px;">One editing team, every format you publish.</h2>
     </div>
-
     <div class="format-grid">
       <div class="format-card card reveal"><div class="banner"><span class="tag">01</span><span class="title">YouTube Creators</span></div><div class="body"><p>Long-form editing built for retention — clean pacing, pattern interrupts, B-roll layering, and mid-roll structure that keeps viewers watching.</p></div></div>
       <div class="format-card card reveal"><div class="banner"><span class="tag">02</span><span class="title">Short-Form (TikTok / Reels / Shorts)</span></div><div class="body"><p>Fast hooks, trending pacing, and burned-in captions designed to stop the scroll in the first second.</p></div></div>
@@ -802,7 +836,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">is this for you</span>
       <h2 class="h2-lg" style="margin-top:18px;">Is CutStudio right for <span class="neon">you?</span></h2>
     </div>
-
     <div class="fit-grid">
       <div class="fit-card no reveal">
         <p class="tag">probably not yet, if</p>
@@ -813,7 +846,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
           <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>You don't have any raw footage yet — you're still in the planning stage.</p></li>
         </ul>
       </div>
-
       <div class="fit-card yes reveal">
         <div class="fit-inner">
           <span class="badge badge-pill">great fit</span>
@@ -838,7 +870,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">the alternative</span>
       <h2 class="h2-lg" style="margin-top:18px;">Compared to hiring it out yourself.</h2>
     </div>
-
     <div class="comp-grid">
       <div class="comp-card muted reveal">
         <p class="comp-title">DIY or freelance marketplace</p>
@@ -872,7 +903,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <h2 class="h2-lg" style="margin-top:18px;">48 hours. Not 48 ifs and maybes.</h2>
       <p class="lede">Here's exactly what to expect after you upload your first batch of footage.</p>
     </div>
-
     <div class="stat-grid">
       <div class="stat-card card reveal"><div class="num">24h</div><div class="lbl">editor assigned</div><p>You're matched with your dedicated editor within one business day.</p></div>
       <div class="stat-card card reveal"><div class="num">48h</div><div class="lbl">first draft</div><p>Your first cut lands in your project board, ready for notes.</p></div>
@@ -889,7 +919,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">creator feedback</span>
       <h2 class="h2-lg" style="margin-top:18px;">Creators who stopped editing their own videos.</h2>
     </div>
-
     <div class="testi-grid">
       <div class="testi card reveal">
         <div class="head"><span class="avatar">JM</span><div><p class="name">Jordan M.</p><p class="sub">Tech YouTuber, 220K subs</p></div></div>
@@ -918,7 +947,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">what's included</span>
       <h2 class="h2-lg" style="margin-top:18px;">Everything inside every CutStudio plan.</h2>
     </div>
-
     <div class="offer-grid">
       <div class="offer-item card reveal"><span class="ico-tile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><p class="eyebrow"><span class="num">01</span> core</p><h3>Dedicated video editor</h3><p>One editor assigned to your account, briefed on your style, niche, and brand guidelines.</p></div>
       <div class="offer-item card reveal"><span class="ico-tile cy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10M7 12h6M4 4h16v12H8l-4 4Z"/></svg></span><p class="eyebrow"><span class="num">02</span> included</p><h3>Captions &amp; subtitles</h3><p>Styled, on-brand captions burned in or delivered as separate SRT files, your call.</p></div>
@@ -940,9 +968,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <h2 class="h2-lg" style="margin-top:18px;">Plans that pay for themselves after <span class="neon">one video.</span></h2>
       <p class="lede">No contracts. No setup fees. Pause or cancel anytime.</p>
     </div>
-
     <div class="plan-grid">
-
       <div class="plan-wrap reveal">
         <div class="plan-card">
           <p class="plan-name">Starter</p>
@@ -959,7 +985,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
           <a href="#contact" class="btn btn-secondary btn-block">Start with Starter</a>
         </div>
       </div>
-
       <div class="plan-wrap featured reveal">
         <span class="plan-badge badge-pill">most popular</span>
         <div class="plan-card">
@@ -978,7 +1003,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
           <a href="#contact" class="btn btn-primary btn-block">Start with Growth</a>
         </div>
       </div>
-
       <div class="plan-wrap reveal">
         <div class="plan-card">
           <p class="plan-name">Studio</p>
@@ -996,9 +1020,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
           <a href="#contact" class="btn btn-secondary btn-block">Start with Studio</a>
         </div>
       </div>
-
     </div>
-
     <p class="plan-note">Need a one-off edit instead of a subscription? <a href="#contact">Contact us for a custom quote</a>.</p>
   </div>
 </section>
@@ -1061,7 +1083,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <span class="eyebrow" style="justify-content:center;">faq</span>
       <h2 class="h2-lg" style="margin-top:18px;">Questions, answered.</h2>
     </div>
-
     <div class="faq-list reveal">
       <details class="faq" open>
         <summary>How fast is turnaround?<span class="chev">+</span></summary>
@@ -1098,16 +1119,13 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
     <span class="eyebrow" style="justify-content:center;">ready when you are</span>
     <h2>Stop editing. Start <span class="neon">posting.</span></h2>
     <p class="lede" style="text-align:center;">Get your first cut back in 48 hours — no contracts, cancel anytime.</p>
-
     <div style="margin-top:30px;">
       <a href="#pricing" class="btn btn-primary btn-lg btn-arrow">See plans &amp; pricing</a>
     </div>
-
     <div class="foot-brand">
       <span class="logo-mark">C</span>
       <span class="word">Cut<span class="neon">Studio</span></span>
     </div>
-
     <p class="foot-links">
       © 2026 CutStudio. All rights reserved.
       &nbsp;·&nbsp; <a href="#">Terms of Service</a>
@@ -1147,19 +1165,33 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
   // ---- PORTFOLIO FILTER ----
   (function () {
     var btns = document.querySelectorAll('.filter-btn');
-    var cards = document.querySelectorAll('.video-card');
+    var longGrid = document.getElementById('longGrid');
+    var shortGrid = document.getElementById('shortGrid');
+
     btns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var filter = btn.getAttribute('data-filter');
+
         btns.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        cards.forEach(function (card) {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
+
+        var allCards = document.querySelectorAll('.video-card');
+        allCards.forEach(function (card) {
+          var match = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.classList.toggle('hidden', !match);
         });
+
+        // Hide entire row if all its cards are hidden
+        var longCards = longGrid.querySelectorAll('.video-card');
+        var allLongHidden = Array.from(longCards).every(function (c) { return c.classList.contains('hidden'); });
+        longGrid.style.display = allLongHidden ? 'none' : '';
+        longGrid.style.marginBottom = allLongHidden ? '0' : '';
+
+        var shortCards = shortGrid.querySelectorAll('.video-card');
+        var allShortHidden = Array.from(shortCards).every(function (c) { return c.classList.contains('hidden'); });
+        shortGrid.style.display = allShortHidden ? 'none' : '';
+        shortGrid.style.paddingTop = allLongHidden ? '0' : '';
+        shortGrid.style.borderTop = allLongHidden ? 'none' : '';
       });
     });
   })();

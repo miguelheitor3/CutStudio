@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0B0F19">
 <title>CutStudio — High-Retention Video Editing for Creators &amp; Brands</title>
-<meta name="description" content="Done-for-you video editing for YouTubers, creators, and brands. Dedicated editor, 48-hour turnaround, unlimited revisions. Plans from $597/mo, cancel anytime.">
+<meta name="description" content="Done-for-you video editing for YouTubers, creators, and brands. Dedicated editor, 6–8 day turnaround, unlimited revisions. Plans from $597/mo, cancel anytime.">
 <link rel="canonical" href="https://cutstudio.example/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CutStudio">
 <meta property="og:title" content="CutStudio — High-Retention Video Editing for Creators & Brands">
-<meta property="og:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 48-hour turnaround, plans from $597/mo.">
+<meta property="og:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 6–8 day turnaround, plans from $597/mo.">
 <meta property="og:url" content="https://cutstudio.example/">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CutStudio — High-Retention Video Editing for Creators & Brands">
-<meta name="twitter:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 48-hour turnaround, plans from $597/mo.">
+<meta name="twitter:description" content="Raw footage in. Scroll-stopping videos out. Dedicated editor, 6–8 day turnaround, plans from $597/mo.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%F0%9F%8E%AC%3C/text%3E%3C/svg%3E">
 
@@ -408,12 +407,12 @@ header{
 .comp-card.glow .comp-inner{ background: var(--card-2); border-radius:18px; padding:28px; height:100%; }
 .comp-title{ font-weight:800; font-size:17px; margin-bottom:18px; color: var(--text); }
 .comp-card.glow .comp-title{ color: #fff; }
-.comp-list li{ display:flex; gap:10px; font-size:14.5px; line-height:1.55; margin-bottom:14px; color: var(--text); font-weight:500; }
+.comp-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14px; line-height:1.55; margin-bottom:14px; color: var(--muted); font-weight:500; }
 .comp-list li:last-child{ margin-bottom:0; }
-.comp-card.muted .comp-list li{ color: var(--muted); }
-.comp-card.glow .comp-list li{ color: rgba(243,244,246,.95); font-weight:600; }
-.comp-list .x{ color: var(--danger); flex-shrink:0; font-weight:700; font-size:16px; }
-.comp-list .ok{ color: var(--success); flex-shrink:0; font-weight:700; font-size:16px; }
+.comp-card.glow .comp-list li{ color: rgba(243,244,246,.85); font-weight:600; }
+.comp-list .ic{ flex-shrink:0; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.comp-card.muted .comp-list .ic{ background: rgba(255,255,255,.06); color: var(--dim); }
+.comp-card.glow .comp-list .ic{ background: var(--grad); color:#fff; }
 
 /* =========================================================
    STATS
@@ -504,12 +503,18 @@ header{
 /* =========================================================
    TEAM
 ========================================================= */
-.team-grid{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
-@media (min-width:768px){ .team-grid{ grid-template-columns: 270px 1fr; gap:48px; } }
-.team-photo{ aspect-ratio:4/5; border-radius:20px; }
-.team-stats{ display:flex; gap:24px; margin-top:22px; flex-wrap:wrap; }
-.team-stats .num{ font-family: var(--font-mono); font-weight:700; color: var(--text); font-size:23px; line-height:1; }
-.team-stats .lbl{ color: var(--dim); font-size:11px; letter-spacing:.04em; margin-top:4px; }
+.team-text-wrap{ max-width:760px; }
+.team-stats{ display:flex; gap:32px; margin-top:28px; flex-wrap:wrap; }
+.team-stats .s{ display:flex; flex-direction:column; gap:4px; }
+.team-stats .num{ font-family: var(--font-mono); font-weight:700; color: var(--text); font-size:clamp(26px,3vw,36px); line-height:1; background: var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.team-stats .lbl{ color: var(--dim); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-family: var(--font-mono); }
+.team-divider{ width:40px; height:3px; background: var(--grad); border-radius:999px; margin:20px 0; }
+.team-traits{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px; }
+@media (min-width:640px){ .team-traits{ grid-template-columns: repeat(2,1fr); } }
+.team-trait{ display:flex; gap:12px; align-items:flex-start; background: rgba(255,255,255,.03); border:1px solid var(--line-soft); border-radius:12px; padding:14px 16px; }
+.team-trait .ic{ flex-shrink:0; width:28px; height:28px; border-radius:8px; background: rgba(139,92,246,.14); color: var(--purple); display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.team-trait h4{ font-weight:700; font-size:13.5px; color: var(--text); margin-bottom:3px; }
+.team-trait p{ font-size:12.5px; color: var(--muted); line-height:1.5; }
 
 /* =========================================================
    FAQ
@@ -654,7 +659,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <span class="video-format-tag">Long-form</span>
         <div class="video-wrapper--wide">
           <iframe
-            src="https://www.youtube.com/embed/u5hB7OS03PA"
+            src="https://www.youtube.com/embed/SEU_VIDEO_ID_LONGO_1"
             title="Documentary Deep Dive"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -671,7 +676,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <span class="video-format-tag">Long-form</span>
         <div class="video-wrapper--wide">
           <iframe
-            src="https://www.youtube.com/embed/0JCT_vnz_QI"
+            src="https://www.youtube.com/embed/SEU_VIDEO_ID_LONGO_2"
             title="Brand Story — Full Cut"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -874,20 +879,20 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <div class="comp-card muted reveal">
         <p class="comp-title">DIY or freelance marketplace</p>
         <ul class="comp-list">
-          <li><span class="x">✕</span>Quality and turnaround change with every hire</li>
-          <li><span class="x">✕</span>You manage briefs, feedback, and deadlines yourself</li>
-          <li><span class="x">✕</span>No backup if your editor goes quiet</li>
-          <li><span class="x">✕</span>Revisions often cost extra, per round</li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>Quality and turnaround change with every hire</li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>You manage briefs, feedback, and deadlines yourself</li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>No backup if your editor goes quiet</li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>Revisions often cost extra, per round</li>
         </ul>
       </div>
       <div class="comp-card muted reveal">
         <div class="comp-inner">
           <p class="comp-title">With CutStudio</p>
           <ul class="comp-list">
-            <li><span class="ok">✓</span>One dedicated editor who knows your style</li>
-            <li><span class="ok">✓</span>A project board where you leave notes, we handle the rest</li>
-            <li><span class="ok">✓</span>A backup editor always has your account covered</li>
-            <li><span class="ok">✓</span>Revisions included in every plan, flat monthly rate</li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>One dedicated editor who knows your style</li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>A project board where you leave notes, we handle the rest</li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>A backup editor always has your account covered</li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span>Revisions included in every plan, flat monthly rate</li>
           </ul>
         </div>
       </div>
@@ -1058,20 +1063,36 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 <!-- ===================== 14 TEAM ===================== -->
 <section class="section">
   <div class="wrap">
-    <div class="team-grid">
-      <div class="team-photo reveal">
-        <img src="Team/team.jpg" alt="Team photo" style="border-radius: 18px;">
+    <div class="section-head reveal" style="max-width:780px; text-align:left; margin-left:0; margin-right:0;">
+      <span class="eyebrow">the team behind your edits</span>
+      <h2 class="h2-lg" style="margin-top:14px;">A team obsessed with <span class="neon">retention, pacing, and clean cuts.</span></h2>
+      <div class="team-divider"></div>
+      <p class="lede" style="margin-top:0;">CutStudio is run by a small team of editors who've cut hundreds of hours of YouTube, branded, and social content. We pair storytelling instinct with technical polish — color, sound design, and motion graphics — so every video feels intentional, not just trimmed.</p>
+    </div>
+
+    <div class="team-traits reveal">
+      <div class="team-trait">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-12h-7l1-8Z"/></svg></span>
+        <div><h4>High-retention editing</h4><p>We cut for watch time, not just aesthetics — pacing and structure engineered to keep viewers until the end.</p></div>
       </div>
-      <div class="reveal">
-        <span class="eyebrow">the team behind your edits</span>
-        <h2 class="h2-md" style="margin-top:14px; margin-bottom:16px;">A team obsessed with <span class="neon">retention, pacing, and clean cuts.</span></h2>
-        <p class="lede" style="margin-top:0;">CutStudio is run by a small team of editors who've cut hundreds of hours of YouTube, branded, and social content. We pair storytelling instinct with technical polish — color, sound design, and motion graphics — so every video feels intentional, not just trimmed.</p>
-        <div class="team-stats">
-          <div class="s"><p class="num">500+</p><p class="lbl">videos delivered</p></div>
-          <div class="s"><p class="num">30+</p><p class="lbl">creators &amp; brands</p></div>
-          <div class="s"><p class="num">4.9/5</p><p class="lbl">average rating</p></div>
-        </div>
+      <div class="team-trait">
+        <span class="ic" style="background:rgba(6,182,212,.14); color:var(--cyan);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+        <div><h4>Niche-matched editors</h4><p>Every editor is selected based on your content category — tech, finance, lifestyle, brand — not just availability.</p></div>
       </div>
+      <div class="team-trait">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></span>
+        <div><h4>Motion &amp; design fluency</h4><p>Color grading, motion graphics, sound design, and thumbnail art — handled in-house, not outsourced.</p></div>
+      </div>
+      <div class="team-trait">
+        <span class="ic" style="background:rgba(6,182,212,.14); color:var(--cyan);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6Z"/></svg></span>
+        <div><h4>Backup always on standby</h4><p>A second editor shadows every account so your schedule never stalls if your primary editor is unavailable.</p></div>
+      </div>
+    </div>
+
+    <div class="team-stats reveal" style="margin-top:40px;">
+      <div class="s"><p class="num">500+</p><p class="lbl">videos delivered</p></div>
+      <div class="s"><p class="num">30+</p><p class="lbl">creators &amp; brands</p></div>
+      <div class="s"><p class="num">4.9/5</p><p class="lbl">average rating</p></div>
     </div>
   </div>
 </section>

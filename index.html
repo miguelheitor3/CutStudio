@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -637,6 +636,94 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="video-card-content"><h4>Podcast Highlight Reel</h4><p>+610K views</p></div>
       </div>
     </div>
+
+    <!-- ===================== Show More Long Videos ===================== -->
+    <div id="extraVideos" style="display:none; margin-top:18px;">
+      <div class="portfolio-long-grid">
+        <div class="video-card more-item" data-category="longform" style="display:none;">
+          <span class="video-format-tag">Long-form</span>
+          <div class="video-wrapper--wide">
+            <iframe src="https://www.youtube.com/embed/eUntUOC3fN4" title="Creator Case Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Creator Case Study</h4><p>+760K views</p></div>
+        </div>
+        <div class="video-card more-item" data-category="longform" style="display:none;">
+          <span class="video-format-tag">Long-form</span>
+          <div class="video-wrapper--wide">
+            <iframe src="https://www.youtube.com/embed/XXXXXXXX" title="Brand Documentary Cut" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Brand Documentary Cut</h4><p>+1.3M views</p></div>
+        </div>
+      </div>
+
+      <!-- ===================== Show More Short Videos ===================== -->
+      <div class="portfolio-short-grid" style="margin-top:18px;">
+        <div class="video-card more-item" data-category="shortform" style="display:none;">
+          <span class="video-format-tag">Short</span>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/KKi1Pnr31uI" title="Audience Hook Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Audience Hook Short</h4><p>+420K views</p></div>
+        </div>
+        <div class="video-card more-item" data-category="shortform" style="display:none;">
+          <span class="video-format-tag">Short</span>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/EytNv6D42sQ" title="Coach Selling Clip" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Coach Clip</h4><p>+680K views</p></div>
+        </div>
+        <div class="video-card more-item" data-category="shortform" style="display:none;">
+          <span class="video-format-tag">Short</span>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/B9xh5LRvHA4" title="Quick Tips Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Quick Tips Short</h4><p>+560K views</p></div>
+        </div>
+        <div class="video-card more-item" data-category="shortform" style="display:none;">
+          <span class="video-format-tag">Short</span>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/XXXXXXXXXXXXX" title="Trend Reaction Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-content"><h4>Trend Reaction Short</h4><p>+710K views</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-actions" style="display:flex; justify-content:center; margin-top:26px;">
+      <button id="showMoreBtn" class="btn btn-primary btn-lg">Show more videos</button>
+    </div>
+
+    <script>
+      (function () {
+        var btn = document.getElementById('showMoreBtn');
+        var extraSection = document.getElementById('extraVideos');
+        var extraCards = document.querySelectorAll('.video-card.more-item');
+        var expanded = false;
+
+        function updateExtraCards() {
+          var filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+          extraCards.forEach(function (card) {
+            var matchesFilter = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.style.display = expanded && matchesFilter ? '' : 'none';
+          });
+        }
+
+        function toggleExpanded() {
+          expanded = !expanded;
+          btn.textContent = expanded ? 'Show fewer videos' : 'Show more videos';
+          extraSection.style.display = expanded ? '' : 'none';
+          updateExtraCards();
+        }
+
+        btn.addEventListener('click', toggleExpanded);
+        document.querySelectorAll('.filter-btn').forEach(function (filterBtn) {
+          filterBtn.addEventListener('click', function () {
+            if (expanded) updateExtraCards();
+          });
+        });
+      })();
+    </script>
+
     <p class="testi-note">For access to more demo videos, contact us.</p>
   </div>
 </section>

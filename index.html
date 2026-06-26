@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,9 +117,7 @@ h2{ font-weight:800; color:var(--text); letter-spacing:-.02em; }
 .cyan{ color: var(--cyan); }
 .purple{ color: var(--purple); }
 
-/* =========================================================
-   EYEBROW
-========================================================= */
+/* EYEBROW */
 .eyebrow{
   display:inline-flex; align-items:center; gap:.6rem;
   font-family:var(--font-mono); font-weight:700; letter-spacing:.18em; text-transform:uppercase;
@@ -127,9 +126,7 @@ h2{ font-weight:800; color:var(--text); letter-spacing:-.02em; }
 .eyebrow .num{ color: var(--purple); font-weight:700; }
 .eyebrow .bar{ display:inline-block; width:18px; height:1px; background: var(--line); }
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* BUTTONS */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
   padding:16px 28px; border-radius:12px; font-weight:700; letter-spacing:-.005em;
@@ -154,15 +151,12 @@ h2{ font-weight:800; color:var(--text); letter-spacing:-.02em; }
   background: var(--grad); color:#fff; font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
 }
 
-/* =========================================================
-   CARD BASE
-========================================================= */
+/* CARD BASE */
 .card{ background: var(--card); border:1px solid var(--line-soft); border-radius:18px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .card:hover{ transform: translateY(-3px); border-color: rgba(139,92,246,.35); box-shadow: 0 16px 40px -22px rgba(139,92,246,.4); }
 .ico-tile{ width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; background: rgba(139,92,246,.14); color: var(--purple); }
 .ico-tile.cy{ background: rgba(6,182,212,.14); color: var(--cyan); }
 
-/* placeholder media */
 .ph{
   display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.4rem;
   background: repeating-linear-gradient(45deg, #131B2E, #131B2E 12px, #161F36 12px, #161F36 24px);
@@ -175,9 +169,7 @@ h2{ font-weight:800; color:var(--text); letter-spacing:-.02em; }
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M10 8.5v7l6-3.5-6-3.5Z' fill='black' stroke='none'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 header{
   position:sticky; top:0; z-index:50; background: rgba(11,15,25,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom:1px solid var(--line-soft);
@@ -193,9 +185,7 @@ header{
 .nav-links a:hover{ color: var(--text); }
 @media (min-width:900px){ .nav-links{ display:flex; } }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 #hero{ padding:64px 0 60px; overflow:hidden; }
 @media (min-width:768px){ #hero{ padding:96px 0 84px; } }
 .glow{ position:absolute; border-radius:50%; filter: blur(80px); pointer-events:none; z-index:0; }
@@ -211,28 +201,13 @@ header{
 .hero-trust{ margin-top:26px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; font-family: var(--font-mono); font-size:11.5px; color: var(--dim); }
 .hero-trust .dot{ color: var(--purple); }
 
-/* Timeline signature graphic */
 .timeline-hero{ max-width:920px; margin:56px auto 0; position:relative; z-index:1; background: var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 24px 22px; box-shadow: 0 24px 70px -30px rgba(139,92,246,.45); }
 @media (min-width:768px){ .timeline-hero{ margin-top:72px; padding:30px 32px 26px; } }
 .tl-track{ display:flex; height:46px; border-radius:10px; overflow:hidden; background: rgba(255,255,255,.04); position:relative; }
 @media (min-width:768px){ .tl-track{ height:58px; } }
-.tl-clip{
-  height:100%;
-  opacity:.95;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  position:relative;
-}
-.tl-clip::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.18);
-}
-.tl-clip + .tl-clip{
-  border-left:2px solid var(--card);
-}
+.tl-clip{ height:100%; opacity:.95; background-size:cover; background-position:center; background-repeat:no-repeat; position:relative; }
+.tl-clip::after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.18); }
+.tl-clip + .tl-clip{ border-left:2px solid var(--card); }
 .tl-playhead{ position:absolute; top:-9px; bottom:-9px; width:2px; background: var(--text); left:0; animation: scrub 7s linear infinite; box-shadow: 0 0 10px 1px rgba(255,255,255,.5); }
 .tl-playhead::before{ content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; border-radius:50%; background: var(--cyan); box-shadow: 0 0 16px 4px rgba(6,182,212,.85); }
 @keyframes scrub{ 0%{ left:0%; } 100%{ left:100%; } }
@@ -242,109 +217,51 @@ header{
 .tl-exports span{ font-family: var(--font-mono); font-size:11px; font-weight:600; color: var(--muted); background: rgba(255,255,255,.03); border:1px solid var(--line); border-radius:999px; padding:7px 14px; }
 .tl-exports span b{ color: var(--cyan); font-weight:700; }
 
-/* =========================================================
-   PORTFOLIO — FILTER BUTTONS
-========================================================= */
-.portfolio-filters{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
-  margin-bottom:36px;
-}
+/* PORTFOLIO */
+.portfolio-filters{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:36px; }
 .filter-btn{
   padding:9px 20px; border-radius:999px; font-size:13px; font-weight:700;
   border:1px solid var(--line); background: rgba(255,255,255,.04);
   color: var(--muted); cursor:pointer; transition: all .18s ease;
-  font-family: var(--font-display);
-  appearance: none; -webkit-appearance: none;
-  outline: none;
+  font-family: var(--font-display); appearance: none; -webkit-appearance: none; outline: none;
 }
 .filter-btn:hover{ background: rgba(255,255,255,.08); color: var(--text); border-color: rgba(255,255,255,.2); }
-.filter-btn.active{
-  background: linear-gradient(135deg, var(--purple), var(--cyan));
-  color:#fff; border-color:transparent;
-  box-shadow: 0 6px 20px -8px rgba(139,92,246,.6);
-}
+.filter-btn.active{ background: linear-gradient(135deg, var(--purple), var(--cyan)); color:#fff; border-color:transparent; box-shadow: 0 6px 20px -8px rgba(139,92,246,.6); }
 
-/* =========================================================
-   PORTFOLIO — VIDEO CARDS
-========================================================= */
+.portfolio-short-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
+@media (min-width:768px){ .portfolio-short-grid{ grid-template-columns: repeat(4,1fr); gap:18px; } }
+.portfolio-long-grid{ display:grid; grid-template-columns: 1fr; gap:18px; margin-bottom:18px; }
+@media (min-width:768px){ .portfolio-long-grid{ grid-template-columns: repeat(2,1fr); } }
+.portfolio-long-grid + .portfolio-short-grid{ padding-top:18px; border-top:1px solid var(--line-soft); }
 
-/* --- Short-form grid (9:16) — 2 cols mobile, 4 cols desktop --- */
-.portfolio-short-grid{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:14px;
-}
-@media (min-width:768px){
-  .portfolio-short-grid{ grid-template-columns: repeat(4,1fr); gap:18px; }
-}
-
-/* --- Long-form grid (16:9) — 1 col mobile, 2 cols desktop --- */
-.portfolio-long-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:18px;
-  margin-bottom:18px;
-}
-@media (min-width:768px){
-  .portfolio-long-grid{ grid-template-columns: repeat(2,1fr); }
-}
-
-/* Divider between long and short rows */
-.portfolio-long-grid + .portfolio-short-grid{
-  padding-top:18px;
-  border-top:1px solid var(--line-soft);
-}
-
-/* --- Card shell --- */
-.video-card{
-  border-radius:18px; overflow:hidden; position:relative;
-  border:1px solid var(--line-soft);
-  background: var(--card);
-  transition: transform .25s ease, border-color .25s ease, opacity .25s ease;
-}
+.video-card{ border-radius:18px; overflow:hidden; position:relative; border:1px solid var(--line-soft); background: var(--card); transition: transform .25s ease, border-color .25s ease, opacity .25s ease; }
 .video-card:hover{ transform: translateY(-4px); border-color: rgba(139,92,246,.4); }
 .video-card.hidden{ display:none; }
 
-/* 9:16 wrapper */
-.video-wrapper{
-  position:relative; width:100%; padding-top:177.78%;
-}
-/* 16:9 wrapper */
-.video-wrapper--wide{
-  position:relative; width:100%; padding-top:56.25%;
-}
-.video-wrapper iframe,
-.video-wrapper--wide iframe{
-  position:absolute; top:0; left:0; width:100%; height:100%; border:none;
-}
+.video-wrapper{ position:relative; width:100%; padding-top:177.78%; }
+.video-wrapper--wide{ position:relative; width:100%; padding-top:56.25%; }
+.video-wrapper iframe, .video-wrapper--wide iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
 
-/* Card label */
 .video-card-content{ padding:12px 14px 14px; }
 .video-card-content h4{ font-size:13px; font-weight:700; line-height:1.3; margin-bottom:4px; color: var(--text); }
 .video-card-content p{ font-size:11.5px; color: var(--cyan); font-weight:700; font-family: var(--font-mono); }
 
-/* Format badge inside card */
 .video-format-tag{
   position:absolute; top:10px; left:10px; z-index:2;
   font-family: var(--font-mono); font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
   padding:4px 10px; border-radius:999px;
   background: rgba(11,15,25,.75); color: var(--cyan);
-  border:1px solid rgba(6,182,212,.3);
-  backdrop-filter: blur(6px);
+  border:1px solid rgba(6,182,212,.3); backdrop-filter: blur(6px);
 }
 
-/* =========================================================
-   PAIN GRID
-========================================================= */
+/* PAIN GRID */
 .pain-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:768px){ .pain-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
 .pain-card{ padding:24px; display:flex; gap:16px; }
 .pain-card h3{ font-weight:700; color: var(--text); font-size:16px; margin-bottom:6px; }
 .pain-card p{ color: var(--muted); font-size:14px; line-height:1.55; }
 
-/* =========================================================
-   PROCESS STEPS
-========================================================= */
+/* STEPS */
 .steps-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:768px){ .steps-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
 @media (min-width:1000px){ .steps-grid{ grid-template-columns: repeat(4,1fr); } }
@@ -353,9 +270,7 @@ header{
 .step-card h3{ font-weight:700; font-size:17px; margin: 30px 0 8px; color: var(--text); position:relative; }
 .step-card p{ color: var(--muted); font-size:13.5px; line-height:1.6; position:relative; }
 
-/* =========================================================
-   PILLAR GRID
-========================================================= */
+/* PILLARS */
 .pillar-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:640px){ .pillar-grid{ grid-template-columns: repeat(2,1fr); } }
 @media (min-width:1000px){ .pillar-grid{ grid-template-columns: repeat(3,1fr); } }
@@ -363,9 +278,7 @@ header{
 .pillar-card h3{ font-weight:700; color: var(--text); font-size:15.5px; margin-bottom:6px; }
 .pillar-card p{ color: var(--muted); font-size:13.5px; line-height:1.55; }
 
-/* =========================================================
-   FORMAT CARDS
-========================================================= */
+/* FORMAT CARDS */
 .format-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:768px){ .format-grid{ grid-template-columns: repeat(2,1fr); gap:18px; } }
 .format-card{ overflow:hidden; }
@@ -375,9 +288,7 @@ header{
 .format-card .body{ padding:18px 20px 22px; }
 .format-card .body p{ color: var(--muted); font-size:14px; line-height:1.6; }
 
-/* =========================================================
-   FIT (two column)
-========================================================= */
+/* FIT */
 .fit-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:768px){ .fit-grid{ grid-template-columns: 1fr 1.06fr; gap:22px; align-items:stretch; } }
 .fit-card{ border-radius:20px; padding:28px 26px 30px; position:relative; }
@@ -396,9 +307,7 @@ header{
 .fit-card.yes .ic{ background: var(--grad); color:#fff; }
 .fit-card.yes .fit-list li{ color: rgba(243,244,246,.85); }
 
-/* =========================================================
-   COMPARISON
-========================================================= */
+/* COMPARISON */
 .comp-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:768px){ .comp-grid{ grid-template-columns: 1fr 1fr; gap:20px; align-items:stretch; } }
 .comp-card{ border-radius:20px; padding:28px; }
@@ -414,9 +323,7 @@ header{
 .comp-card.muted .comp-list .ic{ background: rgba(255,255,255,.06); color: var(--dim); }
 .comp-card.glow .comp-list .ic{ background: var(--grad); color:#fff; }
 
-/* =========================================================
-   STATS
-========================================================= */
+/* STATS */
 .stat-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:12px; }
 @media (min-width:768px){ .stat-grid{ grid-template-columns: repeat(4,1fr); gap:18px; } }
 .stat-card{ padding:24px 18px; text-align:center; }
@@ -424,9 +331,7 @@ header{
 .stat-card .lbl{ font-weight:700; color: var(--cyan); font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; }
 .stat-card p{ color: var(--muted); font-size:13px; line-height:1.5; }
 
-/* =========================================================
-   TESTIMONIALS
-========================================================= */
+/* TESTIMONIALS */
 .testi-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
 @media (min-width:900px){ .testi-grid{ grid-template-columns: repeat(3,1fr); } }
 .testi{ padding:22px; }
@@ -438,9 +343,7 @@ header{
 .testi p{ color: var(--muted); font-size:14px; line-height:1.6; }
 .testi-note{ text-align:center; color: var(--dim); font-size:12px; margin-top:26px; }
 
-/* =========================================================
-   OFFER
-========================================================= */
+/* OFFER */
 .offer-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:640px){ .offer-grid{ grid-template-columns: repeat(2,1fr); } }
 @media (min-width:900px){ .offer-grid{ grid-template-columns: repeat(3,1fr); } }
@@ -448,9 +351,7 @@ header{
 .offer-item h3{ font-weight:700; color: var(--text); font-size:15px; margin:14px 0 8px; }
 .offer-item p{ color: var(--muted); font-size:13.5px; line-height:1.55; }
 
-/* =========================================================
-   PRICING
-========================================================= */
+/* PRICING */
 .plan-grid{ display:grid; grid-template-columns:1fr; gap:18px; }
 @media (min-width:900px){ .plan-grid{ grid-template-columns: repeat(3,1fr); align-items:stretch; } }
 .plan-wrap{ border-radius:22px; }
@@ -472,17 +373,13 @@ header{
 .plan-note{ text-align:center; color: var(--dim); font-size:13px; margin-top:38px; }
 .plan-note a{ color: var(--cyan); font-weight:700; text-decoration: underline; text-underline-offset:3px; }
 
-/* =========================================================
-   MINI GUARANTEE
-========================================================= */
+/* MINI GUARANTEE */
 .mini-guarantee{ display:flex; align-items:center; justify-content:center; gap:16px; max-width:760px; margin:0 auto; padding:8px 12px; text-align:center; }
 .mini-guarantee .ic{ flex-shrink:0; width:46px; height:46px; border-radius:13px; background: var(--grad); color:#fff; display:flex; align-items:center; justify-content:center; }
 .mini-guarantee p{ color: var(--muted); font-size:14px; line-height:1.5; }
 .mini-guarantee strong{ color: var(--text); }
 
-/* =========================================================
-   GUARANTEE / SEAL
-========================================================= */
+/* GUARANTEE SEAL */
 .guarantee-grid{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
 @media (min-width:768px){ .guarantee-grid{ grid-template-columns: 200px 1fr; gap:48px; } }
 .seal{
@@ -500,9 +397,7 @@ header{
 .guarantee-points li{ display:flex; gap:12px; margin-bottom:14px; font-size:14.5px; line-height:1.55; color: var(--muted); }
 .guarantee-points .ic{ flex-shrink:0; width:24px; height:24px; border-radius:50%; background: var(--grad); color:#fff; display:flex; align-items:center; justify-content:center; margin-top:1px; }
 
-/* =========================================================
-   TEAM
-========================================================= */
+/* TEAM */
 .team-text-wrap{ max-width:760px; }
 .team-stats{ display:flex; gap:32px; margin-top:28px; flex-wrap:wrap; }
 .team-stats .s{ display:flex; flex-direction:column; gap:4px; }
@@ -516,9 +411,7 @@ header{
 .team-trait h4{ font-weight:700; font-size:13.5px; color: var(--text); margin-bottom:3px; }
 .team-trait p{ font-size:12.5px; color: var(--muted); line-height:1.5; }
 
-/* =========================================================
-   FAQ
-========================================================= */
+/* FAQ */
 .faq-list{ max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
 details.faq{ background: var(--card); border:1px solid var(--line-soft); border-radius:14px; overflow:hidden; }
 details.faq > summary{
@@ -534,9 +427,7 @@ details.faq[open] .chev{ transform: rotate(45deg); background: var(--grad); colo
 details.faq .ans{ overflow:hidden; max-height:0; transition: max-height .35s ease, padding .35s ease; color: var(--muted); font-size:14px; line-height:1.65; padding:0 22px; }
 details.faq[open] .ans{ max-height:500px; padding:0 22px 22px; }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 footer{ padding:76px 0 36px; text-align:center; overflow:hidden; }
 footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; margin: 16px auto 0; }
 .foot-brand{ margin-top:54px; display:flex; flex-direction:column; align-items:center; gap:10px; }
@@ -546,9 +437,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 .foot-links a{ text-decoration: underline; text-underline-offset:2px; }
 .foot-links a:hover{ color: var(--text); }
 
-/* =========================================================
-   STICKY MOBILE CTA
-========================================================= */
+/* STICKY MOBILE CTA */
 .sticky-cta{
   position:fixed; left:0; right:0; bottom:0; z-index:60; padding:12px 16px calc(12px + env(safe-area-inset-bottom));
   background: linear-gradient(180deg, rgba(11,15,25,0) 0%, rgba(11,15,25,.92) 35%, rgba(11,15,25,1) 100%);
@@ -557,15 +446,62 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 .sticky-cta.show{ transform: translateY(0); }
 @media (min-width:900px){ .sticky-cta{ display:none !important; } }
 
-/* =========================================================
-   REVEAL
-========================================================= */
+/* REVEAL */
 .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-in{ opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
 
 .grid-2{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:768px){ .grid-2{ grid-template-columns: 1fr 1fr; gap:20px; } }
+
+/* =========================================================
+   CONTACT MODAL
+========================================================= */
+.modal-backdrop{
+  position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,.65); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  display:flex; align-items:center; justify-content:center; padding:16px;
+  opacity:0; pointer-events:none; transition:opacity .25s ease;
+}
+.modal-backdrop.open{ opacity:1; pointer-events:all; }
+.modal-box{
+  background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:24px;
+  padding:36px 32px 32px; max-width:440px; width:100%; position:relative;
+  transform:translateY(20px) scale(.97); transition:transform .28s ease;
+}
+.modal-backdrop.open .modal-box{ transform:translateY(0) scale(1); }
+.modal-close{
+  position:absolute; top:16px; right:18px;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1);
+  color:var(--muted); border-radius:9px; width:34px; height:34px;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  font-size:20px; line-height:1; transition:background .15s, color .15s; font-family:sans-serif;
+}
+.modal-close:hover{ background:rgba(255,255,255,.15); color:var(--text); }
+.modal-plan-badge{
+  display:inline-flex; padding:5px 14px; border-radius:999px;
+  font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  background:var(--grad); color:#fff; margin-bottom:14px;
+  font-family:var(--font-mono);
+}
+.modal-title{ font-size:22px; font-weight:800; color:var(--text); margin:0 0 7px; letter-spacing:-.02em; }
+.modal-sub{ color:var(--muted); font-size:14px; line-height:1.6; margin:0 0 26px; }
+.modal-divider{ height:1px; background:var(--line-soft); margin:0 0 22px; }
+.contact-option{
+  display:flex; align-items:center; gap:14px;
+  background:rgba(255,255,255,.04); border:1px solid var(--line-soft);
+  border-radius:14px; padding:16px 18px; margin-bottom:12px;
+  cursor:pointer; text-decoration:none; color:inherit;
+  transition:background .18s, border-color .18s, transform .18s;
+}
+.contact-option:last-child{ margin-bottom:0; }
+.contact-option:hover{ background:rgba(255,255,255,.09); border-color:rgba(139,92,246,.45); transform:translateY(-2px); }
+.opt-ico{ width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.opt-ico.email{ background:rgba(139,92,246,.16); }
+.opt-ico.whats{ background:rgba(37,211,102,.14); }
+.opt-label{ font-weight:700; font-size:15px; color:var(--text); margin-bottom:2px; }
+.opt-hint{ font-size:12.5px; color:var(--muted); }
+.opt-arrow{ margin-left:auto; color:var(--dim); font-size:22px; flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -618,12 +554,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="tl-playhead"></div>
       </div>
       <div class="tl-ruler">
-        <span>00:00</span>
-        <span>00:08</span>
-        <span>00:16</span>
-        <span>00:24</span>
-        <span>00:32</span>
-        <span>00:40</span>
+        <span>00:00</span><span>00:08</span><span>00:16</span><span>00:24</span><span>00:32</span><span>00:40</span>
       </div>
       <div class="tl-exports">
         <span><b>EXPORT</b> · YouTube 16:9</span>
@@ -643,7 +574,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <p class="lede">A sample of the kind of cuts your channel could be shipping every week.</p>
     </div>
 
-    <!-- FILTER BUTTONS -->
     <div class="portfolio-filters">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="longform">Long-form</button>
@@ -652,106 +582,53 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <button class="filter-btn" data-filter="brand">Brand</button>
     </div>
 
-    <!-- LONG-FORM ROW (16:9) -->
     <div class="portfolio-long-grid" id="longGrid">
-
       <div class="video-card reveal" data-category="longform">
         <span class="video-format-tag">Long-form</span>
         <div class="video-wrapper--wide">
-          <iframe
-            src="https://www.youtube.com/embed/u5hB7OS03PA"
-            title="Documentary Deep Dive"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/u5hB7OS03PA" title="Documentary Deep Dive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="video-card-content">
-          <h4>Documentary Deep Dive</h4>
-          <p>+2.1M views</p>
-        </div>
+        <div class="video-card-content"><h4>Documentary Deep Dive</h4><p>+2.1M views</p></div>
       </div>
-
       <div class="video-card reveal" data-category="longform">
         <span class="video-format-tag">Long-form</span>
         <div class="video-wrapper--wide">
-          <iframe
-            src="https://www.youtube.com/embed/0JCT_vnz_QI"
-            title="Brand Story — Full Cut"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/0JCT_vnz_QI" title="Brand Story — Full Cut" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="video-card-content">
-          <h4>Brand Story — Full Cut</h4>
-          <p>+980K views</p>
-        </div>
+        <div class="video-card-content"><h4>Brand Story — Full Cut</h4><p>+980K views</p></div>
       </div>
-
     </div>
 
-    <!-- SHORT-FORM ROW (9:16) -->
     <div class="portfolio-short-grid" id="shortGrid">
-
       <div class="video-card reveal" data-category="shortform">
         <span class="video-format-tag">Short</span>
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/_Hp_IUyy2rg"
-            title="Founder Interview Breakdown"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/_Hp_IUyy2rg" title="Founder Interview Breakdown" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-card-content"><h4>Founder Interview Breakdown</h4><p>+1.2M views</p></div>
       </div>
-
       <div class="video-card reveal" data-category="brand">
         <span class="video-format-tag">Brand</span>
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/p-qtw5ZWgDg"
-            title="SaaS Product Launch Hook"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/p-qtw5ZWgDg" title="SaaS Product Launch Hook" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-card-content"><h4>SaaS Product Launch Hook</h4><p>+840K views</p></div>
       </div>
-
       <div class="video-card reveal" data-category="shortform">
         <span class="video-format-tag">Short</span>
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/KKi1Pnr31uI"
-            title="Tech Curiosity Short"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/KKi1Pnr31uI" title="Tech Curiosity Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-card-content"><h4>Tech Curiosity Short</h4><p>+3.4M views</p></div>
       </div>
-
       <div class="video-card reveal" data-category="podcast">
         <span class="video-format-tag">Podcast</span>
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/U8ws1Y08qv4"
-            title="Podcast Highlight Reel"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/U8ws1Y08qv4" title="Podcast Highlight Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-card-content"><h4>Podcast Highlight Reel</h4><p>+610K views</p></div>
       </div>
-
     </div>
-
     <p class="testi-note">Sample placements for illustration — swap in your own client work before launch.</p>
   </div>
 </section>
@@ -869,116 +746,36 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 </section>
 
 <!-- ===================== 07 COMPARISON ===================== -->
-<!-- ===================== 07 COMPARISON ===================== -->
 <section class="section section-alt">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" style="justify-content:center;">the alternative</span>
-      <h2 class="h2-lg" style="margin-top:18px;">
-        Compared to hiring it out yourself.
-      </h2>
+      <h2 class="h2-lg" style="margin-top:18px;">Compared to hiring it out yourself.</h2>
     </div>
-
     <div class="fit-grid">
-
-      <!-- LEFT SIDE -->
       <div class="fit-card no reveal">
         <p class="tag">the traditional way</p>
-
         <h3>DIY or freelance marketplace</h3>
-
         <ul class="fit-list">
-          <li>
-            <span class="ic">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-                <path d="M6 6l12 12M18 6 6 18"/>
-              </svg>
-            </span>
-            <p>Quality and turnaround change with every hire.</p>
-          </li>
-
-          <li>
-            <span class="ic">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-                <path d="M6 6l12 12M18 6 6 18"/>
-              </svg>
-            </span>
-            <p>You manage briefs, feedback, and deadlines yourself.</p>
-          </li>
-
-          <li>
-            <span class="ic">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-                <path d="M6 6l12 12M18 6 6 18"/>
-              </svg>
-            </span>
-            <p>No backup if your editor goes quiet.</p>
-          </li>
-
-          <li>
-            <span class="ic">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-                <path d="M6 6l12 12M18 6 6 18"/>
-              </svg>
-            </span>
-            <p>Revisions often cost extra, per round.</p>
-          </li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>Quality and turnaround change with every hire.</p></li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>You manage briefs, feedback, and deadlines yourself.</p></li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>No backup if your editor goes quiet.</p></li>
+          <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span><p>Revisions often cost extra, per round.</p></li>
         </ul>
       </div>
-
-      <!-- RIGHT SIDE -->
       <div class="fit-card yes reveal">
         <div class="fit-inner">
-
-          <span class="badge badge-pill">
-            BEST CHOICE
-          </span>
-
+          <span class="badge badge-pill">BEST CHOICE</span>
           <p class="tag">the cutstudio way</p>
-
           <h3>With CutStudio</h3>
-
           <ul class="fit-list">
-            <li>
-              <span class="ic">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m4 12 5 5 11-11"/>
-                </svg>
-              </span>
-              <p>One dedicated editor who knows your style.</p>
-            </li>
-
-            <li>
-              <span class="ic">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m4 12 5 5 11-11"/>
-                </svg>
-              </span>
-              <p>A project board where you leave notes while we handle the execution.</p>
-            </li>
-
-            <li>
-              <span class="ic">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m4 12 5 5 11-11"/>
-                </svg>
-              </span>
-              <p>A backup editor is always available to keep your content moving.</p>
-            </li>
-
-            <li>
-              <span class="ic">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m4 12 5 5 11-11"/>
-                </svg>
-              </span>
-              <p>Unlimited revisions included with a predictable monthly price.</p>
-            </li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>One dedicated editor who knows your style.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>A project board where you leave notes while we handle the execution.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>A backup editor is always available to keep your content moving.</p></li>
+            <li><span class="ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"/></svg></span><p>Unlimited revisions included with a predictable monthly price.</p></li>
           </ul>
-
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1109,7 +906,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         </div>
       </div>
     </div>
-    <p class="plan-note">Need a one-off edit instead of a subscription? <a href="#contact">Contact us for a custom quote</a>.</p>
+    <p class="plan-note">Need a one-off edit instead of a subscription? <a href="#contact" class="modal-trigger-custom">Contact us for a custom quote</a>.</p>
   </div>
 </section>
 
@@ -1152,7 +949,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <div class="team-divider"></div>
       <p class="lede" style="margin-top:0;">CutStudio is run by a small team of editors who've cut hundreds of hours of YouTube, branded, and social content. We pair storytelling instinct with technical polish — color, sound design, and motion graphics — so every video feels intentional, not just trimmed.</p>
     </div>
-
     <div class="team-traits reveal">
       <div class="team-trait">
         <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-12h-7l1-8Z"/></svg></span>
@@ -1171,7 +967,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div><h4>Backup always on standby</h4><p>A second editor shadows every account so your schedule never stalls if your primary editor is unavailable.</p></div>
       </div>
     </div>
-
     <div class="team-stats reveal" style="margin-top:40px;">
       <div class="s"><p class="num">500+</p><p class="lbl">videos delivered</p></div>
       <div class="s"><p class="num">30+</p><p class="lbl">creators &amp; brands</p></div>
@@ -1244,61 +1039,148 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
   <a href="#pricing" class="btn btn-primary btn-block btn-arrow" style="padding:16px;">See plans &amp; pricing</a>
 </div>
 
+<!-- ===================== CONTACT MODAL ===================== -->
+<div id="contactModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+     onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fechar" onclick="closeModal()">&#x2715;</button>
+
+    <span class="modal-plan-badge" id="modalBadge">Contact Ss</span>
+    <h2 class="modal-title" id="modalTitle">Let's get started?</h2>
+    <p class="modal-sub">Choose how you prefer to contact us. We respond within 2 hours during business hours.</p>
+
+    <div class="modal-divider"></div>
+
+    <a id="modalEmail" class="contact-option" href="mailto:hello@cutstudio.example">
+      <span class="opt-ico email">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+        </svg>
+      </span>
+      <div>
+        <p class="opt-label">Send e-mail</p>
+        <p class="opt-hint">hello@cutstudio.example</p>
+      </div>
+      <span class="opt-arrow">&#8250;</span>
+    </a>
+
+    <a id="modalWhatsapp" class="contact-option"
+       href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20CutStudio."
+       target="_blank" rel="noopener">
+      <span class="opt-ico whats">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+      </span>
+      <div>
+        <p class="opt-label">WhatsApp</p>
+        <p class="opt-hint">Open chat directly in the app</p>
+      </div>
+      <span class="opt-arrow">&#8250;</span>
+    </a>
+
+  </div>
+</div>
+
 <script>
-  (function () {
-    var cta = document.getElementById('stickyCta');
-    var trigger = 480;
-    var shown = false;
-    function onScroll() {
-      var should = window.scrollY > trigger;
-      if (should !== shown) { cta.classList.toggle('show', should); shown = should; }
-    }
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
+/* =======================================================
+   SETTINGS — EDIT ONLY THESE TWO LINES
+======================================================= */
+var WHATSAPP_NUMBER = '5511919262176'; // Your number with country code (ex: 5511999999999) without + or spaces
+var EMAIL           = 'miguelheitor@outlook.com'; // Your contact email
+/* ======================================================= */
 
-  (function () {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
-  })();
+/* ---- STICKY CTA ---- */
+(function () {
+  var cta = document.getElementById('stickyCta');
+  var shown = false;
+  function onScroll() {
+    var should = window.scrollY > 480;
+    if (should !== shown) { cta.classList.toggle('show', should); shown = should; }
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 
-  // ---- PORTFOLIO FILTER ----
-  (function () {
-    var btns = document.querySelectorAll('.filter-btn');
-    var longGrid = document.getElementById('longGrid');
-    var shortGrid = document.getElementById('shortGrid');
-
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var filter = btn.getAttribute('data-filter');
-
-        btns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-
-        var allCards = document.querySelectorAll('.video-card');
-        allCards.forEach(function (card) {
-          var match = filter === 'all' || card.getAttribute('data-category') === filter;
-          card.classList.toggle('hidden', !match);
-        });
-
-        // Hide entire row if all its cards are hidden
-        var longCards = longGrid.querySelectorAll('.video-card');
-        var allLongHidden = Array.from(longCards).every(function (c) { return c.classList.contains('hidden'); });
-        longGrid.style.display = allLongHidden ? 'none' : '';
-        longGrid.style.marginBottom = allLongHidden ? '0' : '';
-
-        var shortCards = shortGrid.querySelectorAll('.video-card');
-        var allShortHidden = Array.from(shortCards).every(function (c) { return c.classList.contains('hidden'); });
-        shortGrid.style.display = allShortHidden ? 'none' : '';
-        shortGrid.style.paddingTop = allLongHidden ? '0' : '';
-        shortGrid.style.borderTop = allLongHidden ? 'none' : '';
-      });
+/* ---- REVEAL ---- */
+(function () {
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
     });
-  })();
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+})();
+
+/* ---- PORTFOLIO FILTER ---- */
+(function () {
+  var btns = document.querySelectorAll('.filter-btn');
+  var longGrid = document.getElementById('longGrid');
+  var shortGrid = document.getElementById('shortGrid');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.video-card').forEach(function (card) {
+        card.classList.toggle('hidden', filter !== 'all' && card.getAttribute('data-category') !== filter);
+      });
+      var allLongHidden = Array.from(longGrid.querySelectorAll('.video-card')).every(function (c) { return c.classList.contains('hidden'); });
+      longGrid.style.display = allLongHidden ? 'none' : '';
+      longGrid.style.marginBottom = allLongHidden ? '0' : '';
+      var allShortHidden = Array.from(shortGrid.querySelectorAll('.video-card')).every(function (c) { return c.classList.contains('hidden'); });
+      shortGrid.style.display = allShortHidden ? 'none' : '';
+      shortGrid.style.paddingTop = allLongHidden ? '0' : '';
+      shortGrid.style.borderTop = allLongHidden ? 'none' : '';
+    });
+  });
+})();
+
+/* ---- CONTACT MODAL ---- */
+function openModal(planName) {
+  var badge   = document.getElementById('modalBadge');
+  var emailEl = document.getElementById('modalEmail');
+  var waEl    = document.getElementById('modalWhatsapp');
+
+  var subject = planName
+    ? 'Interesse no ' + planName + ' — CutStudio'
+    : 'Orçamento personalizado — CutStudio';
+  var waMsg = planName
+    ? 'Olá! Tenho interesse no ' + planName + ' do CutStudio. Pode me ajudar?'
+    : 'Olá! Gostaria de saber mais sobre o CutStudio e receber um orçamento personalizado.';
+
+  badge.textContent   = planName || 'Orçamento personalizado';
+  emailEl.href        = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject);
+  waEl.href           = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMsg);
+
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* Intercepta cliques nos botões de plano e no link "custom quote" */
+document.addEventListener('click', function (e) {
+  var planBtn = e.target.closest('.plan-card a[href="#contact"]');
+  if (planBtn) {
+    e.preventDefault();
+    var nameEl = planBtn.closest('.plan-card').querySelector('h3');
+    openModal(nameEl ? nameEl.textContent.trim() : null);
+    return;
+  }
+  var customLink = e.target.closest('.modal-trigger-custom');
+  if (customLink) {
+    e.preventDefault();
+    openModal(null);
+  }
+});
 </script>
 
 </body>

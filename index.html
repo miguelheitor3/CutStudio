@@ -457,12 +457,20 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 /* =========================================================
    CONTACT MODAL
 ========================================================= */
-.modal-backdrop{
-  position:fixed; inset:0; z-index:200;
-  background:rgba(0,0,0,.65); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
-  display:flex; align-items:center; justify-content:center; padding:16px;
-  opacity:0; pointer-events:none; transition:opacity .25s ease;
+.modal-backdrop {
+  position: fixed; 
+  inset: 0; 
+  z-index: 200;
+  background: rgba(11, 15, 25, 0.85); /* Um fundo escuro um pouco mais opaco para compensar a falta do blur */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 16px;
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity .25s ease;
 }
+
 .modal-backdrop.open{ opacity:1; pointer-events:all; }
 .modal-box{
   background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:24px;
@@ -629,7 +637,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="video-card-content"><h4>Podcast Highlight Reel</h4><p>+610K views</p></div>
       </div>
     </div>
-    <p class="testi-note">Sample placements for illustration — swap in your own client work before launch.</p>
+    <p class="testi-note">For access to more demo videos, contact us.</p>
   </div>
 </section>
 
@@ -892,7 +900,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
         <div class="plan-card">
           <p class="plan-name">Studio</p>
           <h3>Agency &amp; Brand</h3>
-          <div class="plan-price"><span class="amt">$5,600</span><span class="per">/ month</span></div>
+          <div class="plan-price"><span class="amt">$5,599</span><span class="per">/ month</span></div>
           <p class="plan-tagline">For agencies and multi-channel brands managing client work.</p>
           <ul class="plan-feats">
             <li><b>16 long-form videos</b> or 40 short-form clips</li>
@@ -1065,7 +1073,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
     </a>
 
     <a id="modalWhatsapp" class="contact-option"
-       href="https://wa.me/5511919262176?text=Ol%C3%A1!%20I%20have%20Interest%20in%20CutStudio."
+       href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20CutStudio."
        target="_blank" rel="noopener">
       <span class="opt-ico whats">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
@@ -1143,13 +1151,13 @@ function openModal(planName) {
   var waEl    = document.getElementById('modalWhatsapp');
 
   var subject = planName
-    ? 'Interesse no ' + planName + ' — CutStudio'
-    : 'Orçamento personalizado — CutStudio';
+    ? 'Interested in ' + planName + ' — CutStudio'
+    : 'Personalized quote - CutStudio';
   var waMsg = planName
-    ? 'Olá! Tenho interesse no ' + planName + ' do CutStudio. Pode me ajudar?'
-    : 'Olá! Gostaria de saber mais sobre o CutStudio e receber um orçamento personalizado.';
+    ? 'Hello! I am interested in ' + planName + ' from CutStudio. Can you help me?'
+    : 'Hello! I would like to know more about CutStudio and receive a personalized quote.';
 
-  badge.textContent   = planName || 'Orçamento personalizado';
+  badge.textContent   = planName || 'Personalized quote';
   emailEl.href        = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject);
   waEl.href           = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMsg);
 
@@ -1182,5 +1190,6 @@ document.addEventListener('click', function (e) {
   }
 });
 </script>
+
 </body>
 </html>

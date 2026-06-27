@@ -241,6 +241,30 @@ header{
 .video-wrapper--wide{ position:relative; width:100%; padding-top:56.25%; }
 .video-wrapper iframe, .video-wrapper--wide iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
 
+/* YT FACADE (lazy thumbnail) */
+.yt-facade{
+  position:absolute; inset:0; cursor:pointer; background:#000; display:flex; align-items:center; justify-content:center;
+}
+.yt-facade img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.85;
+  transition:opacity .2s;
+}
+.yt-facade:hover img{ opacity:1; }
+.yt-facade .play-btn{
+  position:relative; z-index:1; width:64px; height:44px; border-radius:12px;
+  background:rgba(220,0,0,.92); display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.5); transition: transform .15s ease, background .15s ease;
+  flex-shrink:0;
+}
+.yt-facade:hover .play-btn{ background:rgba(255,0,0,1); transform:scale(1.08); }
+.yt-facade .play-btn::after{
+  content:""; width:0; height:0;
+  border-top:10px solid transparent;
+  border-bottom:10px solid transparent;
+  border-left:17px solid #fff;
+  margin-left:4px;
+}
+
 .video-card-content{ padding:12px 14px 14px; }
 .video-card-content h4{ font-size:13px; font-weight:700; line-height:1.3; margin-bottom:4px; color: var(--text); }
 .video-card-content p{ font-size:11.5px; color: var(--cyan); font-weight:700; font-family: var(--font-mono); }
@@ -457,19 +481,18 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
    CONTACT MODAL
 ========================================================= */
 .modal-backdrop {
-  position: fixed; 
-  inset: 0; 
+  position: fixed;
+  inset: 0;
   z-index: 200;
-  background: rgba(11, 15, 25, 0.85); /* Um fundo escuro um pouco mais opaco para compensar a falta do blur */
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  background: rgba(11, 15, 25, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 16px;
-  opacity: 0; 
-  pointer-events: none; 
+  opacity: 0;
+  pointer-events: none;
   transition: opacity .25s ease;
 }
-
 .modal-backdrop.open{ opacity:1; pointer-events:all; }
 .modal-box{
   background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:24px;
@@ -589,6 +612,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       <button class="filter-btn" data-filter="brand">Brand</button>
     </div>
 
+    <!-- Always-visible long-form videos (normal iframes) -->
     <div class="portfolio-long-grid" id="longGrid">
       <div class="video-card reveal" data-category="longform">
         <span class="video-format-tag">Long-form</span>
@@ -606,6 +630,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       </div>
     </div>
 
+    <!-- Always-visible short-form videos (normal iframes) -->
     <div class="portfolio-short-grid" id="shortGrid">
       <div class="video-card reveal" data-category="shortform">
         <span class="video-format-tag">Short</span>
@@ -637,92 +662,98 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       </div>
     </div>
 
-    <!-- ===================== Show More Long Videos ===================== -->
+    <!-- ===== SHOW MORE — uses facade thumbnails instead of iframes ===== -->
     <div id="extraVideos" style="display:none; margin-top:18px;">
+
       <div class="portfolio-long-grid">
+        <!-- Long-form: Creator Case Study — ID: eUntUOC3fN4 -->
         <div class="video-card more-item" data-category="longform" style="display:none;">
           <span class="video-format-tag">Long-form</span>
           <div class="video-wrapper--wide">
-            <iframe src="https://www.youtube.com/embed/eUntUOC3fN4" title="Creator Case Study" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/eUntUOC3fN4?autoplay=1">
+              <img src="https://i.ytimg.com/vi/eUntUOC3fN4/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/eUntUOC3fN4/hqdefault.jpg'"
+                   alt="Creator Case Study" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Creator Case Study</h4><p>+760K views</p></div>
         </div>
+        <!-- Long-form: Brand Documentary Cut — replace XXXXXXXX with real ID -->
         <div class="video-card more-item" data-category="longform" style="display:none;">
           <span class="video-format-tag">Long-form</span>
           <div class="video-wrapper--wide">
-            <iframe src="https://www.youtube.com/embed/XXXXXXXX" title="Brand Documentary Cut" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/XXXXXXXX?autoplay=1">
+              <img src="https://i.ytimg.com/vi/XXXXXXXX/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/XXXXXXXX/hqdefault.jpg'"
+                   alt="Brand Documentary Cut" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Brand Documentary Cut</h4><p>+1.3M views</p></div>
         </div>
       </div>
 
-      <!-- ===================== Show More Short Videos ===================== -->
       <div class="portfolio-short-grid" style="margin-top:18px;">
+        <!-- Short: Audience Hook Short — ID: KKi1Pnr31uI -->
         <div class="video-card more-item" data-category="shortform" style="display:none;">
           <span class="video-format-tag">Short</span>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/KKi1Pnr31uI" title="Audience Hook Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/KKi1Pnr31uI?autoplay=1">
+              <img src="https://i.ytimg.com/vi/KKi1Pnr31uI/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/KKi1Pnr31uI/hqdefault.jpg'"
+                   alt="Audience Hook Short" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Audience Hook Short</h4><p>+420K views</p></div>
         </div>
+        <!-- Short: Coach Clip — ID: EytNv6D42sQ -->
         <div class="video-card more-item" data-category="shortform" style="display:none;">
           <span class="video-format-tag">Short</span>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/EytNv6D42sQ" title="Coach Selling Clip" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/EytNv6D42sQ?autoplay=1">
+              <img src="https://i.ytimg.com/vi/EytNv6D42sQ/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/EytNv6D42sQ/hqdefault.jpg'"
+                   alt="Coach Clip" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Coach Clip</h4><p>+680K views</p></div>
         </div>
+        <!-- Short: Quick Tips Short — ID: B9xh5LRvHA4 -->
         <div class="video-card more-item" data-category="shortform" style="display:none;">
           <span class="video-format-tag">Short</span>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/B9xh5LRvHA4" title="Quick Tips Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/B9xh5LRvHA4?autoplay=1">
+              <img src="https://i.ytimg.com/vi/B9xh5LRvHA4/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/B9xh5LRvHA4/hqdefault.jpg'"
+                   alt="Quick Tips Short" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Quick Tips Short</h4><p>+560K views</p></div>
         </div>
+        <!-- Short: Trend Reaction Short — replace XXXXXXXXXXXXX with real ID -->
         <div class="video-card more-item" data-category="shortform" style="display:none;">
           <span class="video-format-tag">Short</span>
           <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/XXXXXXXXXXXXX" title="Trend Reaction Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="yt-facade" data-src="https://www.youtube.com/embed/XXXXXXXXXXXXX?autoplay=1">
+              <img src="https://i.ytimg.com/vi/XXXXXXXXXXXXX/maxresdefault.jpg"
+                   onerror="this.src='https://i.ytimg.com/vi/XXXXXXXXXXXXX/hqdefault.jpg'"
+                   alt="Trend Reaction Short" loading="lazy">
+              <div class="play-btn"></div>
+            </div>
           </div>
           <div class="video-card-content"><h4>Trend Reaction Short</h4><p>+710K views</p></div>
         </div>
       </div>
     </div>
+    <!-- ===== END SHOW MORE ===== -->
 
     <div class="portfolio-actions" style="display:flex; justify-content:center; margin-top:26px;">
       <button id="showMoreBtn" class="btn btn-primary btn-lg">Show more videos</button>
     </div>
-
-    <script>
-      (function () {
-        var btn = document.getElementById('showMoreBtn');
-        var extraSection = document.getElementById('extraVideos');
-        var extraCards = document.querySelectorAll('.video-card.more-item');
-        var expanded = false;
-
-        function updateExtraCards() {
-          var filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-          extraCards.forEach(function (card) {
-            var matchesFilter = filter === 'all' || card.getAttribute('data-category') === filter;
-            card.style.display = expanded && matchesFilter ? '' : 'none';
-          });
-        }
-
-        function toggleExpanded() {
-          expanded = !expanded;
-          btn.textContent = expanded ? 'Show fewer videos' : 'Show more videos';
-          extraSection.style.display = expanded ? '' : 'none';
-          updateExtraCards();
-        }
-
-        btn.addEventListener('click', toggleExpanded);
-        document.querySelectorAll('.filter-btn').forEach(function (filterBtn) {
-          filterBtn.addEventListener('click', function () {
-            if (expanded) updateExtraCards();
-          });
-        });
-      })();
-    </script>
 
     <p class="testi-note">For access to more demo videos, contact us.</p>
   </div>
@@ -1139,13 +1170,10 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
      onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <button class="modal-close" aria-label="Fechar" onclick="closeModal()">&#x2715;</button>
-
-    <span class="modal-plan-badge" id="modalBadge">Contact Ss</span>
+    <span class="modal-plan-badge" id="modalBadge">Contact Us</span>
     <h2 class="modal-title" id="modalTitle">Let's get started?</h2>
     <p class="modal-sub">Choose how you prefer to contact us. We respond within 2 hours during business hours.</p>
-
     <div class="modal-divider"></div>
-
     <a id="modalEmail" class="contact-option" href="mailto:hello@cutstudio.example">
       <span class="opt-ico email">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1158,7 +1186,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       </div>
       <span class="opt-arrow">&#8250;</span>
     </a>
-
     <a id="modalWhatsapp" class="contact-option"
        href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Tenho%20interesse%20no%20CutStudio."
        target="_blank" rel="noopener">
@@ -1173,7 +1200,6 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
       </div>
       <span class="opt-arrow">&#8250;</span>
     </a>
-
   </div>
 </div>
 
@@ -1181,8 +1207,8 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
 /* =======================================================
    SETTINGS — EDIT ONLY THESE TWO LINES
 ======================================================= */
-var WHATSAPP_NUMBER = '5511919262176'; // Your number with country code (ex: 5511999999999) without + or spaces
-var EMAIL           = 'miguelheitor@outlook.com'; // Your contact email
+var WHATSAPP_NUMBER = '5511919262176';
+var EMAIL           = 'miguelheitor@outlook.com';
 /* ======================================================= */
 
 /* ---- STICKY CTA ---- */
@@ -1231,23 +1257,61 @@ var EMAIL           = 'miguelheitor@outlook.com'; // Your contact email
   });
 })();
 
+/* ---- SHOW MORE ---- */
+(function () {
+  var btn = document.getElementById('showMoreBtn');
+  var extraSection = document.getElementById('extraVideos');
+  var extraCards = document.querySelectorAll('.video-card.more-item');
+  var expanded = false;
+
+  function updateExtraCards() {
+    var filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    extraCards.forEach(function (card) {
+      var matchesFilter = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.style.display = expanded && matchesFilter ? '' : 'none';
+    });
+  }
+
+  function toggleExpanded() {
+    expanded = !expanded;
+    btn.textContent = expanded ? 'Show fewer videos' : 'Show more videos';
+    extraSection.style.display = expanded ? '' : 'none';
+    updateExtraCards();
+  }
+
+  btn.addEventListener('click', toggleExpanded);
+  document.querySelectorAll('.filter-btn').forEach(function (filterBtn) {
+    filterBtn.addEventListener('click', function () {
+      if (expanded) updateExtraCards();
+    });
+  });
+})();
+
+/* ---- YT FACADE: replace thumbnail with real iframe on click ---- */
+document.addEventListener('click', function (e) {
+  var facade = e.target.closest('.yt-facade');
+  if (!facade) return;
+  var iframe = document.createElement('iframe');
+  iframe.src = facade.dataset.src;
+  iframe.title = facade.querySelector('img') ? facade.querySelector('img').alt : 'Video';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+  facade.replaceWith(iframe);
+});
+
 /* ---- CONTACT MODAL ---- */
 function openModal(planName) {
   var badge   = document.getElementById('modalBadge');
   var emailEl = document.getElementById('modalEmail');
   var waEl    = document.getElementById('modalWhatsapp');
-
-  var subject = planName
-    ? 'Interested in ' + planName + ' — CutStudio'
-    : 'Personalized quote - CutStudio';
-  var waMsg = planName
+  var subject = planName ? 'Interested in ' + planName + ' — CutStudio' : 'Personalized quote - CutStudio';
+  var waMsg   = planName
     ? 'Hello! I am interested in ' + planName + ' from CutStudio. Can you help me?'
     : 'Hello! I would like to know more about CutStudio and receive a personalized quote.';
-
-  badge.textContent   = planName || 'Personalized quote';
-  emailEl.href        = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject);
-  waEl.href           = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMsg);
-
+  badge.textContent = planName || 'Personalized quote';
+  emailEl.href      = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject);
+  waEl.href         = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMsg);
   document.getElementById('contactModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1261,7 +1325,6 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeModal();
 });
 
-/* Intercepta cliques nos botões de plano e no link "custom quote" */
 document.addEventListener('click', function (e) {
   var planBtn = e.target.closest('.plan-card a[href="#contact"]');
   if (planBtn) {

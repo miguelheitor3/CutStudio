@@ -752,7 +752,7 @@ footer h2{ font-size: clamp(26px,4vw,46px); line-height:1.1; max-width:22ch; mar
     <!-- ===== END SHOW MORE ===== -->
 
     <div class="portfolio-actions" style="display:flex; justify-content:center; margin-top:26px;">
-      <button id="showMoreBtn" class="btn btn-primary btn-lg">Show more videos</button>
+      <button id="showMoreBtn" class="btn btn-primary btn-lg">Show More</button>
     </div>
 
     <p class="testi-note">For access to more demo videos, contact us.</p>
@@ -1274,7 +1274,9 @@ var EMAIL           = 'miguelheitor@outlook.com';
 
   function toggleExpanded() {
     expanded = !expanded;
-    btn.textContent = expanded ? 'Show fewer videos' : 'Show more videos';
+    btn.textContent = expanded ? 'Show Less' : 'Show More';
+    btn.classList.toggle('btn-primary', !expanded);
+    btn.classList.toggle('btn-secondary', expanded);
     extraSection.style.display = expanded ? '' : 'none';
     updateExtraCards();
   }
